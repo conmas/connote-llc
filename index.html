@@ -53,14 +53,25 @@
 
 	<div class="contact">
 		<h2 class="contact">Contact us.</h2>
-		<form>
-  		Name<br>
-  		<input type="text" name="name"><br>
-  		Email address<br>
-  		<input type="email" name="email"><br>
-			How can we help?<br>
-			<input type="text" name="message"><br><br>
-			<input type="submit" value="Submit">
+		<form action="#" autocomplete="off">
+			<fieldset>
+				<input id="name" type="text" name="name" required>
+				<label for="first">First Name</label>
+      	<div class="after"></div>
+			</fieldset>
+			<fieldset>
+				<input id="email" type="email" name="email" required>
+				<label for="email">Email address</label>
+				<div class="after"></div>
+			</fieldset>
+			<fieldset>
+				<input id="message" type="text" name="message" required>
+				<label for="message">How can we help?</label>
+				<div class="after"></div>
+			</fieldset>
+			<fieldset>
+      	<button>Submit</button>
+    	</fieldset>
 		</form>
 	</div>
 
