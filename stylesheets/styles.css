@@ -3,6 +3,7 @@ body {
   -webkit-text-size-adjust: 100%;
   background-color: #17171d;
   font-family: -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+  color: white;
   line-height: 1.2em;
 }
 @media (min-width: 1200px) {
@@ -32,15 +33,9 @@ body {
 
 h1 {
   font-weight: 700;
-  color: white;
   font-size: 2.7em;
 }
 @media (max-width: 999px) {
-  h1 {
-    font-size: 2em;
-  }
-}
-@media (max-width: 800px) {
   h1 {
     font-size: 2em;
   }
@@ -51,23 +46,27 @@ h1 {
   }
 }
 
-h2, p.hero {
+h2 {
   color: #63636E;
   font-weight: 500;
   font-size: 2em;
   line-height: 1.2em;
 }
 @media (max-width: 999px) {
-  h2, p.hero {
+  h2 {
     font-size: 1.75em;
     line-height: 1.2em;
   }
 }
 @media (max-width: 800px) {
-  h2, p.hero {
+  h2 {
     font-size: 1.5em;
     line-height: 1.2em;
   }
+}
+
+section {
+  padding: 3em 0em 3em 0em;
 }
 
 div.service-blocks {
@@ -75,11 +74,16 @@ div.service-blocks {
   justify-content: center;
   align-items: stretch;
   align-content: center;
-  flex-direction: row wrap;
+  padding: 1em 0em 1em 0em;
+}
+@media (min-width: 1200px) {
+  div.service-blocks {
+    flex-direction: row wrap;
+  }
 }
 @media (max-width: 800px) {
   div.service-blocks {
-    flex-direction: column wrap;
+    flex-direction: column;
   }
 }
 
@@ -87,90 +91,108 @@ div.service {
   background-color: #121217;
   margin: 0em 1em 0em 0em;
   padding: 0em 1em 0em 1em;
-  width: 25%;
+  font-size: 1em;
+  line-height: 1.2em;
 }
-
-h3.service {
-  color: white;
+div.service h3 {
   font-weight: 700;
-  font-size: 1em;
 }
-
-p.service {
+div.service p {
   color: #63636E;
-  font-size: 1em;
+}
+@media (max-width: 800px) {
+  div.service {
+    margin: 0em 0em 1em 0em;
+    padding: 0em 1em 0em 1em;
+  }
 }
 
 form, fieldset {
   position: relative;
   border: none;
+  width: 100%;
 }
-
-label {
+form label, fieldset label {
   position: absolute;
-  top: 18px;
+  top: 0.77em;
+  font-size: 1.45em;
   color: #63636E;
   transform-origin: left;
   transition: all 0.3s ease;
 }
-
-input {
-  font-size: 1.5em;
-  width: 100%;
-  border: none;
-}
-input:focus {
-  outline: none;
-}
-input:focus ~ label {
-  color: purple;
-}
-input:focus ~ label, input:valid ~ label {
-  top: 0;
-  transform: scale(0.6, 0.6);
-}
-input:focus ~ .after {
-  background-position: 0 0;
-}
-
-.after {
+form .after, fieldset .after {
   width: 100%;
   height: 2px;
-  background: linear-gradient(to right, purple 50%, transparent 50%);
+  background: linear-gradient(to right, #00c490 50%, transparent 50%);
   background-color: #63636E;
   background-size: 200% 100%;
   background-position: 100% 0;
   transition: all 0.6s ease;
 }
-
-button {
-  position: relative;
-  font-size: 2em;
-  margin-top: 20px;
-  padding: 2px 10px;
-  color: purple;
-  background: #17171d;
+form input, fieldset input {
+  font-size: 1.45em;
+  width: 100%;
+  height: 2.5em;
   border: none;
-  background: linear-gradient(to right, purple 50%, transparent 50%);
-  background-color: purple;
-  background-size: 200% 100%;
-  background-position: 100% 0;
+  background-color: #17171d;
+  color: white;
+}
+form input:focus, fieldset input:focus {
+  outline: none;
+}
+form input:focus ~ label, form input:valid ~ label, fieldset input:focus ~ label, fieldset input:valid ~ label {
+  color: #00c490;
+  top: 0;
+  transform: scale(0.6, 0.6);
+}
+form input:invalid:focus ~ label, fieldset input:invalid:focus ~ label {
+  top: 0;
+  transform: scale(0.6, 0.6);
+}
+form input:focus ~ .after, fieldset input:focus ~ .after {
+  background-position: 0 0;
+}
+form button, fieldset button {
+  position: relative;
+  font-size: 1.5em;
+  margin-top: 0.5em;
+  padding: 1em 0em 1em 0em;
+  width: 100%;
+  height: 2em;
+  color: black;
+  display: block;
+  background-color: #00c490;
+  border: none;
+  border-radius: 0.5em;
   transition: all 0.6s ease;
 }
-button:before {
-  position: absolute;
-  content: "Submit";
-  top: 2px;
-  bottom: 2px;
-  left: 2px;
-  right: 2px;
-  display: block;
-  background-color: white;
+form button:hover, fieldset button:hover {
+  background-color: #00694d;
+  color: white;
 }
-button:active, button:focus, button:hover {
-  outline: none;
-  background-position: 0 0;
-  color: purple;
+form button:active, fieldset button:active {
+  background-color: #003d2d;
+  color: white;
 }
+
+/* button {
+
+  background-position: 100% 0;
+	&:before {
+	  position: absolute;
+	  content: "Submit";
+	  top: 2px;
+	  bottom: 2px;
+	  left: 2px;
+	  right: 2px;
+	  display: block;
+	  background-color: white;
+	}
+	&:active, &:focus, &:hover {
+	  outline: none;
+	  background-position: 0 0;
+	  color: $accentcolor;
+	}
+} */
 
 /*# sourceMappingURL=styles.css.map */

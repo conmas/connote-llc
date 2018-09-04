@@ -1,14 +1,16 @@
 @import "mixins";
 @import "colors";
-@import "typography";
 
 @charset "UTF-8";
+
+$font-stack: -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
 
 body {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 	background-color: $gray;
 	font-family: $font-stack;
+	color: white;
 	line-height: 1.2em;
 	@include breakpoint(imac) {
 		padding: 3em 5em 3em 5em;
@@ -23,19 +25,18 @@ body {
 		font-size: 1em;
 	}
 	@include breakpoint(iphone) {
-		padding: 1.5em;
+		padding: 2em;
 		font-size: .75em;
 	}
 }
 
 h1 {
 	font-weight: 700;
-	color: white;
 	font-size: 2.7em;
-	@include breakpoint(ipadpro) {
-		font-size: 2em;
+	span.period {
+		color: $accentcolor;
 	}
-	@include breakpoint(ipad) {
+	@include breakpoint(ipadpro) {
 		font-size: 2em;
 	}
 	@include breakpoint(iphone) {
@@ -43,8 +44,8 @@ h1 {
 	}
 }
 
-h2, p.hero {
-	color: $lightgray;
+h2 {
+	color: white;
 	font-weight: 500;
 	font-size: 2em;
 	line-height: 1.2em;
@@ -58,14 +59,21 @@ h2, p.hero {
 	}
 }
 
+section {
+	padding: 3em 0em 3em 0em;
+}
+
 div.service-blocks {
 	display: flex;
 	justify-content: center;
 	align-items: stretch;
 	align-content: center;
-	flex-direction: row wrap;
+	padding: 1em 0em 1em 0em;
+	@include breakpoint(imac) {
+		flex-direction: row wrap;
+	}
 	@include breakpoint(ipad) {
-		flex-direction: column wrap;
+		flex-direction: column;
 	}
 }
 
@@ -73,88 +81,82 @@ div.service {
 	background-color: $darkgray;
 	margin: 0em 1em 0em 0em;
 	padding: 0em 1em 0em 1em;
-	width: 25%;
-}
-
-h3.service {
-	color: white;
-	font-weight: 700;
 	font-size: 1em;
+	line-height: 1.2em;
+	h3 {
+		font-weight: 700;
+	}
+	p {
+		color: $lightgray;
+	}
+	@include breakpoint(ipad) {
+		margin: 0em 0em 1em 0em;
+		padding: 0em 1em 0em 1em;
+	}
 }
 
-p.service {
-	color: #63636E;
-	font-size: 1em;
-}
-
-form, fieldset {
-  position: relative;
+form {
 	border: none;
-}
-
-label {
-  position: absolute;
-  top: 18px;
-  color: $lightgray;
-  transform-origin: left;
-  transition: all 0.3s ease;
-}
-
-input {
-  font-size: 1.5em;
-  width: 100%;
-  border: none;
-	&:focus {
-	  outline: none;
+	width: 100%;
+	label {
+		position: absolute;
+		top: 0.77em;
+		font-size: 1.45em;
+		color: $lightgray;
+		transform-origin: left;
+		transition: all 0.3s ease;
 	}
-	&:focus ~ label {
-		color: $accentcolor;
+	.after {
+		width: 100%;
+		height: 2px;
+		background: linear-gradient(to right, $accentcolor 50%, transparent 50%);
+		background-color: $lightgray;
+		background-size: 200% 100%;
+		background-position: 100% 0;
+		transition: all 0.6s ease;
 	}
-	&:focus ~ label, &:valid ~ label {
-		top: 0;
-		transform: scale(0.6, 0.6);
+	input {
+		font-size: 1.45em;
+		width: 100%;
+		height: 2.5em;
+		border: none;
+		background-color: $gray;
+		color: white;
+		&:focus {
+			outline: none;
+		}
+		&:focus ~ label, &:valid ~ label {
+			color: $accentcolor;
+			top: 0;
+			transform: scale(0.6, 0.6);
+		}
+		&:invalid:focus ~ label {
+			top: 0;
+			transform: scale(0.6, 0.6);
+		}
+		&:focus ~ .after {
+			background-position: 0 0;
+		}
 	}
-	&:focus ~ .after {
-	  background-position: 0 0;
-	}
-}
-
-.after {
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(to right, $accentcolor 50%, transparent 50%);
-  background-color: $lightgray;
-  background-size: 200% 100%;
-  background-position: 100% 0;
-  transition: all 0.6s ease;
-}
-
-button {
-  position: relative;
-  font-size: 2em;
-  margin-top: 20px;
-  padding: 2px 10px;
-  color: $accentcolor;
-  background: $gray;
-  border: none;
-  background: linear-gradient(to right, $accentcolor 50%, transparent 50%);
-  background-color: $accentcolor;
-  background-size: 200% 100%;
-  background-position: 100% 0;
-  transition: all 0.6s ease;
-	&:before {
-	  position: absolute;
-	  content: "Submit";
-	  top: 2px;
-	  bottom: 2px;
-	  left: 2px;
-	  right: 2px;
-	  display: block;
-	  background-color: white;
-	}
-	&:active, &:focus, &:hover {
-	  outline: none;
-	  background-position: 0 0;
-	  color: $accentcolor;
+	button {
+		position: relative;
+		font-size: 1.5em;
+		padding: 1em 0em 1em 0em;
+		width: 100%;
+		height: 2em;
+		color: black;
+		display: block;
+		background-color: $accentcolor;
+		border: none;
+		border-radius: .5em;
+		transition: all 0.6s ease;
+		&:hover, &:focus {
+			background-color: $accentcolormedium;
+			color: white;
+		}
+		&:active {
+			background-color: $accentcolordark;
+			color: white;
+		}
 	}
 }

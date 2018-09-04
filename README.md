@@ -1,2 +1,2 @@
 # Connote
-## Connote is a Chicago-based company specializing in presentation design, copywriting, and consulting.
+## Connote offers design, copywriting, and consulting for sales presentations, slide decks, and branded Keynote or PowerPoint themes.

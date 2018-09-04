@@ -6,74 +6,91 @@
 	<link rel="stylesheet" type="text/css" href="./stylesheets/styles.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<meta charset="utf-8"/>
-	<meta name="description" content="Connote is a Chicago-based company specializing in presentation design, copywriting, and consulting.">
+	<meta name="description" content="Connote offers design, copywriting, and consulting for sales presentations, slide decks, and branded Keynote or PowerPoint themes.">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="author" content="Connor Mason">
 	<link rel="apple-touch-icon" href="">
 	<link rel="icon" href="">
 	<link rel="shortcut icon" href="" />
-	<meta property="og:title" content="Connote Presentation Design & Consulting" />
+	<meta property="og:title" content="Connote Presentation Consulting" />
 	<meta property="og:url" content="https://connote.design" />
 	<meta property="og:image" content="" />
 	<meta property="og:site_name" content="Connote" />
-	<meta property="og:description" content="Connote is a Chicago-based company specializing in presentation design, copywriting, and consulting." />
+	<meta property="og:description" content="Connote offers design, copywriting, and consulting for sales presentations, slide decks, and branded Keynote or PowerPoint themes." />
 	<meta name="twitter:card" content="summary" />
 	<meta name="twitter:site" content="@conmas" />
 	<meta name="twitter:domain" content="connote.design" />
-	<meta name="twitter:title" content="Connote | Presentation Design & Consulting" />
-	<meta name="twitter:description" content="Connote is a Chicago-based company specializing in presentation design, copywriting, and consulting." />
+	<meta name="twitter:title" content="Connote | Presentation Consulting" />
+	<meta name="twitter:description" content="Connote offers design, copywriting, and consulting for sales presentations, slide decks, and branded Keynote or PowerPoint themes." />
 	<meta name="twitter:image" content="" />
 
-<!-- GOOGLE ANALYTICS -->
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+	     <script>
+	       function onSubmit(token) {
+	         document.getElementById("contact-form").submit();
+	       }
+	     </script>
 
 </head>
 
 <body>
-	<div class="hero">
-			<h1>Connote.</h1>
-			<p class="hero">Give a presentation that demands to be heard. Beyond just the layout of your slides, Connote offers copywriting and consulting on the content, argumentation, and overall flow of your big sales pitch to ensure you make your point.</p>
-	</div>
 
-	<div class="service-blocks">
-		<div class="service">
-			<h3 class="service">Presentation &amp; Slide&nbsp;Deck Design</h3>
-			<p class="service">Your next big idea isn't based on a template, so your presentation shouldn't be either. Connote designs and lays out slide decks for sales&nbsp;pitches, conferences, or even internal presentations so you can stand out from the crowd.</p>
+	<section id="hero">
+		<div class="hero">
+				<h1>Connote<span class="period">.</span></h1>
+				<h2 class="hero">Give a presentation that demands to be heard. Connote offers design, copywriting, and consulting for sales presentations, slide decks, and branded Keynote or PowerPoint themes.</h2>
+				<h2 class="tagline">No matter the medium, no matter the message, we make sure you make your point.</h2>
 		</div>
+	</section>
 
-		<div class="service">
-			<h3 class="service">Presentation Consulting</h3>
-			<p class="service">Give a presentation that demands to be heard. Beyond just the layout of your slides, Connote offers copywriting and consulting on the content, argumentation, and overall flow of your big sales pitch to ensure you make your point.</p>
+	<section id="service-blocks">
+		<div class="services-intro">
+				<h2 class="our-services">Our services.</h2>
+				<p>Connote offers a range of services designed to help your presentation shine.</p>
 		</div>
+		<div class="service-blocks">
+			<div class="service">
+				<h3 class="service">Presentation &amp; Slide&nbsp;Deck Design</h3>
+				<p class="service">Your next big idea isn't based on a template, so your presentation shouldn't be either. Connote designs and lays out slide decks for sales&nbsp;pitches, conferences, or even internal presentations so you can stand out from the crowd.</p>
+			</div>
 
-		<div class="service">
-			<h3 class="service">R&eacute;sum&eacute; &amp; CV Design</h3>
-			<p class="service">Recruiter spend less than 10 seconds on each r&eacute;sum&eacute;—yours deserves to be memorable. Connote designs and offers copy consulting on r&eacute;sum&eacute;s and curricula vitae for individuals and recent graduates looking to make a splash.</p>
+			<div class="service">
+				<h3 class="service">Presentation Consulting</h3>
+				<p class="service">Give a presentation that demands to be heard. Beyond just the layout of your slides, Connote offers copywriting and consulting on the content, argumentation, and overall flow of your big sales pitch to ensure you make your point.</p>
+			</div>
+
+			<div class="service">
+				<h3 class="service">R&eacute;sum&eacute; &amp; CV Design</h3>
+				<p class="service">Recruiter spend less than 10 seconds on each r&eacute;sum&eacute;—yours deserves to be memorable. Connote designs and offers copy consulting on r&eacute;sum&eacute;s and curricula vitae for individuals and recent graduates looking to make a splash.</p>
+			</div>
 		</div>
-	</div>
+	</section>
 
-	<div class="contact">
-		<h2 class="contact">Contact us.</h2>
-		<form action="#" autocomplete="off">
-			<fieldset>
-				<input id="name" type="text" name="name" required>
-				<label for="first">First Name</label>
-      	<div class="after"></div>
-			</fieldset>
-			<fieldset>
-				<input id="email" type="email" name="email" required>
-				<label for="email">Email address</label>
-				<div class="after"></div>
-			</fieldset>
-			<fieldset>
-				<input id="message" type="text" name="message" required>
-				<label for="message">How can we help?</label>
-				<div class="after"></div>
-			</fieldset>
-			<fieldset>
-      	<button>Submit</button>
-    	</fieldset>
-		</form>
-	</div>
+	<section id="contact">
+		<div class="contact">
+			<h2 class="contact">Contact us.</h2>
+			<form id="contact-form" action="./scripts/email-send.php" method="POST" autocomplete="off">
+				<fieldset>
+					<input id="name" type="text" name="name" required>
+					<label for="name">Name</label>
+	      	<div class="after"></div>
+				</fieldset>
+				<fieldset>
+					<input id="email" type="email" name="email" required>
+					<label for="email">Email address</label>
+					<div class="after"></div>
+				</fieldset>
+				<fieldset>
+					<input id="message" type="text" name="message" required>
+					<label for="message">How can we help?</label>
+					<div class="after"></div>
+				</fieldset>
+				<fieldset>
+	      	<button class="g-recaptcha" data-sitekey="6LeZJW4UAAAAAHYmj6yR3jxQiTTz5dzmEtwU5cqC" data-callback='onSubmit'>Submit</button>
+	    	</fieldset>
+			</form>
+		</div>
+	</section>
 
 </body>
 
