@@ -1,9 +1,8 @@
 @import "mixins";
 @import "colors";
 
-@charset "UTF-8";
-
-$font-stack: -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+@import url('https://fonts.googleapis.com/css?family=Work+Sans');
+$font-stack: -apple-system, BlinkMacSystemFont, 'Work Sans', sans-serif;
 
 body {
   -ms-text-size-adjust: 100%;
@@ -26,16 +25,13 @@ body {
 	}
 	@include breakpoint(iphone) {
 		padding: 2em;
-		font-size: .75em;
+		font-size: 0.75em;
 	}
 }
 
 h1 {
 	font-weight: 700;
 	font-size: 2.7em;
-	span.period {
-		color: $accentcolor;
-	}
 	@include breakpoint(ipadpro) {
 		font-size: 2em;
 	}
@@ -45,7 +41,7 @@ h1 {
 }
 
 h2 {
-	color: white;
+	color: $lightgray;
 	font-weight: 500;
 	font-size: 2em;
 	line-height: 1.2em;
@@ -95,7 +91,7 @@ div.service {
 	}
 }
 
-form {
+form, fieldset {
 	border: none;
 	width: 100%;
 	label {
@@ -105,15 +101,6 @@ form {
 		color: $lightgray;
 		transform-origin: left;
 		transition: all 0.3s ease;
-	}
-	.after {
-		width: 100%;
-		height: 2px;
-		background: linear-gradient(to right, $accentcolor 50%, transparent 50%);
-		background-color: $lightgray;
-		background-size: 200% 100%;
-		background-position: 100% 0;
-		transition: all 0.6s ease;
 	}
 	input {
 		font-size: 1.45em;
@@ -134,9 +121,18 @@ form {
 			top: 0;
 			transform: scale(0.6, 0.6);
 		}
-		&:focus ~ .after {
+		&:focus ~ .underline {
 			background-position: 0 0;
 		}
+	}
+	.underline {
+		width: 100%;
+		height: 2px;
+		background: linear-gradient(to right, $accentcolor 50%, transparent 50%);
+		background-color: $lightgray;
+		background-size: 200% 100%;
+		background-position: 100% 0;
+		transition: all 0.6s ease;
 	}
 	button {
 		position: relative;

@@ -4,7 +4,6 @@
 <head>
 	<title>Connote | Presentation Design & Consulting</title>
 	<link rel="stylesheet" type="text/css" href="./stylesheets/styles.css">
-	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<meta charset="utf-8"/>
 	<meta name="description" content="Connote offers design, copywriting, and consulting for sales presentations, slide decks, and branded Keynote or PowerPoint themes.">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,26 +23,26 @@
 	<meta name="twitter:description" content="Connote offers design, copywriting, and consulting for sales presentations, slide decks, and branded Keynote or PowerPoint themes." />
 	<meta name="twitter:image" content="" />
 
-	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-	     <script>
-	       function onSubmit(token) {
-	         document.getElementById("contact-form").submit();
-	       }
-	     </script>
+<!--	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+	   <script>
+			 function onSubmit(token) {
+				 document.getElementById("contact-form").submit();
+			 }
+		 </script> -->
 
 </head>
 
 <body>
 
-	<section id="hero">
-		<div class="hero">
-				<h1>Connote<span class="period">.</span></h1>
+	<section class="hero">
+		<div>
+				<h1>Connote.</h1>
 				<h2 class="hero">Give a presentation that demands to be heard. Connote offers design, copywriting, and consulting for sales presentations, slide decks, and branded Keynote or PowerPoint themes.</h2>
 				<h2 class="tagline">No matter the medium, no matter the message, we make sure you make your point.</h2>
 		</div>
 	</section>
 
-	<section id="service-blocks">
+	<section class="service-blocks">
 		<div class="services-intro">
 				<h2 class="our-services">Our services.</h2>
 				<p>Connote offers a range of services designed to help your presentation shine.</p>
@@ -66,27 +65,28 @@
 		</div>
 	</section>
 
-	<section id="contact">
-		<div class="contact">
-			<h2 class="contact">Contact us.</h2>
-			<form id="contact-form" action="./scripts/email-send.php" method="POST" autocomplete="off">
+	<section class="contact">
+		<div>
+			<h2 class="contact-title">Contact us.</h2>
+			<form id="contact-form" action="./scripts/email-send.py" method="POST" autocomplete="off">
 				<fieldset>
 					<input id="name" type="text" name="name" required>
 					<label for="name">Name</label>
-	      	<div class="after"></div>
+	      	<div class="underline"></div>
 				</fieldset>
 				<fieldset>
 					<input id="email" type="email" name="email" required>
 					<label for="email">Email address</label>
-					<div class="after"></div>
+					<div class="underline"></div>
 				</fieldset>
 				<fieldset>
 					<input id="message" type="text" name="message" required>
 					<label for="message">How can we help?</label>
-					<div class="after"></div>
+					<div class="underline"></div>
 				</fieldset>
 				<fieldset>
-	      	<button class="g-recaptcha" data-sitekey="6LeZJW4UAAAAAHYmj6yR3jxQiTTz5dzmEtwU5cqC" data-callback='onSubmit'>Submit</button>
+	      	<button>Submit</button>
+					<!--<button class="g-recaptcha" data-sitekey="6LeZJW4UAAAAAHYmj6yR3jxQiTTz5dzmEtwU5cqC" data-callback='onSubmit'>Submit</button> -->
 	    	</fieldset>
 			</form>
 		</div>
