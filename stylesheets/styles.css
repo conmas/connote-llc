@@ -108,70 +108,77 @@ div.service p {
   }
 }
 
-form, fieldset {
+fieldset.left {
+  width: 43% !important;
+  float: left !important;
+}
+@media (max-width: 600px) {
+  fieldset.left {
+    width: 100%;
+    float: none;
+  }
+}
+
+fieldset.right {
+  width: 43% !important;
+  float: right !important;
+}
+@media (max-width: 600px) {
+  fieldset.right {
+    width: 100%;
+    float: none;
+  }
+}
+
+fieldset {
+  position: relative;
   border: none;
   width: 100%;
 }
-form label, fieldset label {
+fieldset label {
   position: absolute;
-  top: 0.77em;
-  font-size: 1.45em;
+  top: 0.85em;
+  font-size: 1.65em;
   color: #63636E;
   transform-origin: left;
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
 }
-form input, fieldset input {
-  font-size: 1.45em;
-  width: 100%;
-  height: 2.5em;
-  border: none;
-  background-color: #17171d;
+fieldset input {
+  background-color: transparent;
   color: white;
-}
-form input:focus, fieldset input:focus {
+  border: none;
+  border-radius: 0;
   outline: none;
+  height: 2em;
+  width: 100%;
+  font-size: 1.65em;
 }
-form input:focus ~ label, form input:valid ~ label, fieldset input:focus ~ label, fieldset input:valid ~ label {
+fieldset input:focus ~ label {
   color: #00c490;
   top: 0;
   transform: scale(0.6, 0.6);
 }
-form input:invalid:focus ~ label, fieldset input:invalid:focus ~ label {
+fieldset input:focus ~ .underline {
+  background-position: 0 0;
+}
+fieldset input:valid ~ label {
+  color: #00c490;
   top: 0;
   transform: scale(0.6, 0.6);
 }
-form input:focus ~ .underline, fieldset input:focus ~ .underline {
-  background-position: 0 0;
+fieldset input[type=email]:not(:empty) ~ label {
+  color: red;
+  top: 0;
+  transform: scale(0.6, 0.6);
 }
-form .underline, fieldset .underline {
+fieldset .underline {
   width: 100%;
   height: 2px;
   background: linear-gradient(to right, #00c490 50%, transparent 50%);
   background-color: #63636E;
   background-size: 200% 100%;
   background-position: 100% 0;
-  transition: all 0.6s ease;
-}
-form button, fieldset button {
-  position: relative;
-  font-size: 1.5em;
-  padding: 1em 0em 1em 0em;
-  width: 100%;
-  height: 2em;
-  color: black;
-  display: block;
-  background-color: #00c490;
-  border: none;
-  border-radius: 0.5em;
-  transition: all 0.6s ease;
-}
-form button:hover, form button:focus, fieldset button:hover, fieldset button:focus {
-  background-color: #00694d;
-  color: white;
-}
-form button:active, fieldset button:active {
-  background-color: #003d2d;
-  color: white;
+  transition: all 0.4s ease;
 }
 
 /*# sourceMappingURL=styles.css.map */

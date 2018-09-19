@@ -2,17 +2,52 @@
    @if $point == imac {
 		 @media (min-width: 1200px) { @content ; }
   }
-   @else if $point == macbook {
+  @else if $point == macbook {
      @media (max-width: 1199px) { @content ; }
   }
-    @else if $point == ipadpro {
+  @else if $point == ipadpro {
      @media (max-width: 999px) { @content ; }
   }
-   @else if $point == ipad {
-     @media (max-width: 800px)  { @content ; }
+  @else if $point == ipad {
+     @media (max-width: 800px) { @content ; }
   }
   @else if $point == iphone {
-     @media (max-width: 600px)  { @content ; }
+     @media (max-width: 600px) { @content ; }
+  }
+}
 
+@mixin field-state($state) {
+  @if $state == focus {
+    &:focus ~ label {
+      color: $accentcolor;
+      top: 0;
+      transform: scale(0.6, 0.6);
+    }
+    &:focus ~ .underline {
+      background-position: 0 0;
+    }
+  }
+  @else if $state == valid {
+    &:valid ~ label {
+      color: $accentcolor;
+      top: 0;
+      transform: scale(0.6, 0.6);
+    }
+  }
+  @else if $state == invalid {
+    &[type="email"]:not(:empty) ~ label {
+      color: red;
+      top: 0;
+      transform: scale(0.6, 0.6);
+    }
+  }
+}
+
+@mixin field-location($location) {
+    width: 43% !important;
+    float: $location !important;
+    @include breakpoint(iphone) {
+      width: 100%;
+      float: none;
   }
 }
