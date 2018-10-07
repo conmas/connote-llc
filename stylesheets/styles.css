@@ -181,4 +181,39 @@ fieldset .underline {
   transition: all 0.4s ease;
 }
 
+button {
+  position: relative;
+  font-size: 1.5em;
+  padding: 0em 1em 0em 1em;
+  width: 100%;
+  height: 2em;
+  display: block;
+  border-radius: 0.5em;
+  transition: all 0.4s ease;
+}
+button label.button {
+  position: absolute;
+  top: -1em;
+}
+button:disabled, button:disabled:hover, button:disabled:active {
+  background-color: transparent;
+  border: 2px;
+  border-color: #00c490;
+}
+button:enabled {
+  background-color: #00c490;
+  border: none;
+}
+button:enabled label.button {
+  color: black;
+}
+button:hover, button:focus {
+  background-color: #00694d;
+  color: white;
+}
+button:active {
+  background-color: #003d2d;
+  color: white;
+}
+
 /*# sourceMappingURL=styles.css.map */

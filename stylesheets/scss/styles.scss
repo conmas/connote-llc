@@ -94,11 +94,11 @@ div.service {
 
 fieldset.left {
   @include field-location(left);
-  }
+}
 
 fieldset.right {
   @include field-location(right);
-  }
+}
 
 fieldset {
   position: relative;
@@ -139,4 +139,26 @@ fieldset {
 		background-position: 100% 0;
 		transition: $transition-speed;
 	}
+}
+
+button {
+
+  position: relative;
+  font-size: 1.5em;
+  padding: 0em 1em 0em 1em;
+  width: 100%;
+  height: 2em;
+  display: block;
+  border-radius: .5em;
+  transition: $transition-speed;
+
+  label.button {
+    position: absolute;
+    top: -1em;
+  }
+
+  @include button-state(disabled);
+  @include button-state(enabled);
+  @include button-state(hover);
+  @include button-state(active);
 }

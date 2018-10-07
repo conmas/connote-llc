@@ -16,6 +16,15 @@
   }
 }
 
+@mixin field-location($location) {
+    width: 43% !important;
+    float: $location !important;
+    @include breakpoint(iphone) {
+      width: 100%;
+      float: none;
+    }
+}
+
 @mixin field-state($state) {
   @if $state == focus {
     &:focus ~ label {
@@ -43,11 +52,33 @@
   }
 }
 
-@mixin field-location($location) {
-    width: 43% !important;
-    float: $location !important;
-    @include breakpoint(iphone) {
-      width: 100%;
-      float: none;
+@mixin button-state($state) {
+  @if $state == disabled {
+    &:disabled, &:disabled:hover, &:disabled:active {
+      background-color: transparent;
+      border: 2px;
+      border-color: $accentcolor;
+    }
+  }
+  @else if $state == enabled {
+    &:enabled {
+      background-color: $accentcolor;
+      border: none;
+      label.button {
+        color: black;
+      }
+    }
+  }
+  @else if $state == hover {
+    &:hover, &:focus {
+      background-color: $accentcolormedium;
+      color: white;
+    }
+  }
+  @else if $state == active {
+    &:active {
+      background-color: $accentcolordark;
+      color: white;
+    }
   }
 }
