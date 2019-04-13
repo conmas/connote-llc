@@ -1,0 +1,28 @@
+{
+  "name": "connote-design",
+  "version": "0.0.1",
+  "description": "",
+  "engines": {
+    "node": "10.x"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node test.js"
+  },
+  "dependencies": {
+    "ejs": "^2.5.6",
+    "express": "^4.15.2"
+  },
+  "devDependencies": {
+    "request": "^2.81.0",
+    "tape": "^4.7.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/conmas/connote.design"
+  },
+  "keywords": [
+  ],
+  "license": "MIT"
+}
