@@ -1,0 +1,51 @@
+extends layout
+
+block content
+	section.hero
+		div
+			h1 Connote.
+			h2.hero Give a presentation that demands to be heard. Connote offers design, copywriting, and consulting for sales presentations, slide decks, and branded Keynote or PowerPoint themes.
+			h2.tagline No matter the medium, no matter the message, we make sure you make your point.
+	section.service-blocks
+		.services-intro
+			h2.our-services Our services.
+			p Connote offers a range of services designed to help your presentation shine.
+		.service-blocks
+			.service
+				h3.service Presentation & Slide Deck Design
+				p.service Your next big idea isn't based on a template, so your presentation shouldn't be either. Connote designs and lays out slide decks for sales pitches, conferences, or even internal presentations so you can stand out from the crowd.
+			.service
+				h3.service Presentation Consulting
+				p.service Give a presentation that demands to be heard. Beyond just the layout of your slides, Connote offers copywriting and consulting on the content, argumentation, and overall flow of your big sales pitch to ensure you make your point.
+			.service
+				h3.service Résumé & CV Design
+				p.service Recruiter spend less than 10 seconds on each résumé—yours deserves to be memorable. Connote designs and offers copy consulting on résumés and curricula vitae for individuals and recent graduates looking to make a splash.
+	section.contact
+		div
+			h2.contact-title Contact us.
+			form#contact-form(action='/', method='POST', autocomplete='off')
+				.name-fields
+					fieldset.left
+						input#first(type='text', name='first', required='')
+						label(for='first') First
+						.underline
+					fieldset.right
+						input#last(type='text', name='last', required='')
+						label(for='last') Last
+						.underline
+				fieldset
+					input#email(type='email', name='email', required='')
+					label(for='email') Email
+					.underline
+				fieldset
+					input#message(name='message', required='')
+					label(for='message') How can we help?
+					.underline
+				button#submit
+					label.submit(for='submit') Submit
+				//
+					<button class="g-recaptcha" data-sitekey="6LeZJW4UAAAAAHYmj6yR3jxQiTTz5dzmEtwU5cqC" data-callback='onSubmit'>Submit</button>
+					placeholder="sjobs@apple.com"
+					placeholder="Let&#8217;s work together."
+
+
