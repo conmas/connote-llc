@@ -1,5 +1,5 @@
 # connote-design
 
-Connote offers design, copywriting, and consulting for sales presentations, slide decks, and branded Keynote or PowerPoint themes. Built by [Connor Mason](https://cnnr.land/).
+Connote offers design, copywriting, and consulting for sales presentations, slide decks, and branded Keynote or PowerPoint themes. 
 
-This site is under active development as an experiment building a simple Node.js application. Feedback and advice welcome!
+Built by [Connor Mason](https://cnnr.land/) and [Billy Collins](http://billycollins.me/).
