@@ -108,34 +108,38 @@ div.service p {
   }
 }
 
-fieldset.left {
-  width: 43% !important;
+form fieldset.left {
+  width: 47.5% !important;
   float: left !important;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 @media (max-width: 600px) {
-  fieldset.left {
+  form fieldset.left {
     width: 100%;
     float: none;
   }
 }
-
-fieldset.right {
-  width: 43% !important;
+form fieldset.right {
+  width: 47.5% !important;
   float: right !important;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 @media (max-width: 600px) {
-  fieldset.right {
+  form fieldset.right {
     width: 100%;
     float: none;
   }
 }
-
-fieldset {
+form fieldset {
   position: relative;
+  padding-left: 0px;
+  padding-right: 0px;
   border: none;
   width: 100%;
 }
-fieldset label {
+form fieldset label {
   position: absolute;
   top: 0.85em;
   font-size: 1.65em;
@@ -143,7 +147,7 @@ fieldset label {
   transform-origin: left;
   transition: all 0.4s ease;
 }
-fieldset input {
+form fieldset input.text {
   background-color: transparent;
   color: white;
   border: none;
@@ -153,25 +157,51 @@ fieldset input {
   width: 100%;
   font-size: 1.65em;
 }
-fieldset input:focus ~ label {
+form fieldset input.text:focus ~ label {
   color: #00c490;
   top: 0;
   transform: scale(0.6, 0.6);
 }
-fieldset input:focus ~ .underline {
+form fieldset input.text:focus ~ .underline {
   background-position: 0 0;
 }
-fieldset input:valid ~ label {
+form fieldset input.text:valid ~ label {
   color: #00c490;
   top: 0;
   transform: scale(0.6, 0.6);
 }
-fieldset input[type=email]:not(:empty) ~ label {
+form fieldset input.text[type=email]:not(:empty) ~ label {
   color: red;
   top: 0;
   transform: scale(0.6, 0.6);
 }
-fieldset .underline {
+form fieldset input.submit {
+  position: relative;
+  font-size: 1.5em;
+  width: 100%;
+  height: 2em;
+  border-radius: 0.5em;
+  transition: all 0.4s ease;
+}
+form fieldset input.submit:disabled, form fieldset input.submit:disabled:hover, form fieldset input.submit:disabled:active {
+  background-color: transparent;
+  border: 2px;
+  border-color: #00c490;
+}
+form fieldset input.submit:enabled {
+  background-color: #00c490;
+  border: none;
+  color: black;
+}
+form fieldset input.submit:hover, form fieldset input.submit:focus {
+  background-color: #00694d;
+  color: white;
+}
+form fieldset input.submit:active {
+  background-color: #003d2d;
+  color: white;
+}
+form fieldset .underline {
   width: 100%;
   height: 2px;
   background: linear-gradient(to right, #00c490 50%, transparent 50%);
@@ -179,40 +209,6 @@ fieldset .underline {
   background-size: 200% 100%;
   background-position: 100% 0;
   transition: all 0.4s ease;
-}
-
-button {
-  position: relative;
-  font-size: 1.5em;
-  width: 100%;
-  height: 2em;
-  display: block;
-  border-radius: 0.5em;
-  transition: all 0.4s ease;
-}
-button label.button {
-  position: absolute;
-  top: -1em;
-}
-button:disabled, button:disabled:hover, button:disabled:active {
-  background-color: transparent;
-  border: 2px;
-  border-color: #00c490;
-}
-button:enabled {
-  background-color: #00c490;
-  border: none;
-}
-button:enabled label.button {
-  color: black;
-}
-button:hover, button:focus {
-  background-color: #00694d;
-  color: white;
-}
-button:active {
-  background-color: #003d2d;
-  color: white;
 }
 
 /*# sourceMappingURL=styles.css.map */

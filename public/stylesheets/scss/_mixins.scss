@@ -17,8 +17,10 @@
 }
 
 @mixin field-location($location) {
-    width: 43% !important;
+    width: 47.5% !important;
     float: $location !important;
+    padding-left: 0px;
+    padding-right: 0px;
     @include breakpoint(iphone) {
       width: 100%;
       float: none;
@@ -64,9 +66,7 @@
     &:enabled {
       background-color: $accentcolor;
       border: none;
-      label.button {
-        color: black;
-      }
+      color: black;
     }
   }
   @else if $state == hover {

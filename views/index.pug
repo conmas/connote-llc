@@ -2,14 +2,12 @@ extends layout
 
 block content
 	section.hero
-		div
-			h1 Connote.
-			h2.hero Give a presentation that demands to be heard. Connote offers design, copywriting, and consulting for sales presentations, slide decks, and branded Keynote or PowerPoint themes.
-			h2.tagline No matter the medium, no matter the message, we make sure you make your point.
+		h1 Connote.
+		h2.hero Give a presentation that demands to be heard. Connote offers design, copywriting, and consulting for sales presentations, slide decks, and branded Keynote or PowerPoint themes.
+		h2.tagline No matter the medium, no matter the message, we make sure you make your point.
 	section.service-blocks
-		.services-intro
-			h2.our-services Our services.
-			p Connote offers a range of services designed to help your presentation shine.
+		h2.our-services Our services.
+		p Connote offers a range of services designed to help your presentation shine.
 		.service-blocks
 			.service
 				h3.service Presentation &amp; Slide Deck Design
@@ -21,25 +19,23 @@ block content
 				h3.service Résumé &amp; CV Design
 				p.service Recruiter spend less than 10 seconds on each résumé—yours deserves to be memorable. Connote designs and offers copy consulting on résumés and curricula vitae for individuals and recent graduates looking to make a splash.
 	section.contact
-		div
-			h2.contact-title Contact us.
-			form#contact-form(action='/', method='POST', autocomplete='off')
-				.name-fields
-					fieldset.left
-						input#first(type='text', name='first', required)
-						label(for='first') First
-						.underline
-					fieldset.right
-						input#last(type='text', name='last', required)
-						label(for='last') Last
-						.underline
-				fieldset
-					input#email(type='email', name='email', required)
-					label(for='email') Email
-					.underline
-				fieldset
-					input#message(name='message', required)
-					label(for='message') How can we help?
-					.underline
-				button#submit
-					label.submit(for='submit') Submit
+		h2.contact-title Contact us.
+		form(action='/', method='POST', autocomplete='off')
+			fieldset.left
+				input.text(type='text', name='first', required)
+				label(for='first') First
+				.underline
+			fieldset.right
+				input.text(type='text', name='last', required)
+				label(for='last') Last
+				.underline
+			fieldset
+				input.text(type='email', name='email', required)
+				label(for='email') Email
+				.underline
+			fieldset
+				input.text(name='message', required)
+				label(for='message') How can we help?
+				.underline
+			fieldset
+				input.submit(type='button', value='Submit')
