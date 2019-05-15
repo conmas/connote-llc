@@ -72,8 +72,15 @@ h2 {
 	}
 }
 
+.section-header {
+	color: white;
+}
+
 section {
 	padding: 3em 0em 3em 0em;
+	p {
+		color: $lightgray;
+	}
 }
 
 .service-blocks {

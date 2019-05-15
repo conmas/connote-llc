@@ -14,6 +14,21 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Connote' });
 });
 
+/* GET work page. */
+router.get('/work', function(req, res, next) {
+    res.render('work', { title: 'Work' });
+});
+
+/* GET team page. */
+router.get('/team', function(req, res, next) {
+    res.render('team', { title: 'Team' });
+});
+
+/* GET contact page. */
+router.get('/contact', function(req, res, next) {
+    res.render('contact', { title: 'Contact' });
+});
+
 router.post('/', [
 	check('first', 'Please enter normal characters only.').isAscii().trim(),
 	check('first', 'Please enter your first name.').isLength({min:1}).trim(),
@@ -51,7 +66,7 @@ router.post('/', [
 
 });
 
-router.get('/thanks', function(req, res, next){
+router.get('/thanks', function(req, res, next) {
 	res.render('thanks');
 })
 
