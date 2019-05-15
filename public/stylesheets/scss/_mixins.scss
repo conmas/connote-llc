@@ -1,5 +1,5 @@
 @mixin breakpoint($point) {
-   @if $point == imac {
+  @if $point == imac {
 		 @media (min-width: 1200px) { @content ; }
   }
   @else if $point == macbook {
@@ -55,14 +55,24 @@
 }
 
 @mixin link-state($state) {
-  @if $state == active {
+  @if $state == std-active {
     &:active {
       color: $accentcolordark;
     }
   }
-  @else if $state == hover {
+  @else if $state == std-hover {
     &:hover, &:focus {
       color: $accentcolormedium;
+    }
+  }
+  @else if $state == logo-active {
+    &:active {
+      color: $darkgray;
+    }
+  }
+  @else if $state == logo-hover {
+    &:hover, &:focus {
+      color: $lightgray;
     }
   }
 }
@@ -94,4 +104,13 @@
       color: white;
     }
   }
+}
+
+
+@mixin fadein {
+  -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: fadein 2s; /* Firefox < 16 */
+      -ms-animation: fadein 2s; /* Internet Explorer */
+       -o-animation: fadein 2s; /* Opera < 12.1 */
+          animation: fadein 2s;
 }

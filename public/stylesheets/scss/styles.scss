@@ -32,17 +32,27 @@ body {
 nav {
 	display: block;
 	width: 100%;
-	text-align: right;
 	background-color: $background;
+	text-align: right;
 	a {
 		transition: $transition-speed;
 		font-size: 1em;
 		color: $accentcolor;
 		text-decoration: none;
-		width: 100%;
 		padding-left: 1em;
-		@include link-state(hover);
-		@include link-state(active);
+		@include link-state(std-hover);
+		@include link-state(std-active);
+	}
+	a.logo {
+		@include fadein;
+		transition: $transition-speed;
+		font-size: 1em;
+		font-weight: 700;
+		color: white;
+		text-decoration: none;
+		padding-left: 0px;
+		@include link-state(logo-hover);
+		@include link-state(logo-active);
 	}
 }
 

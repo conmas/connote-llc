@@ -34,15 +34,14 @@ body {
 nav {
   display: block;
   width: 100%;
-  text-align: right;
   background-color: #17171d;
+  text-align: right;
 }
 nav a {
   transition: all 0.4s ease;
   font-size: 1em;
   color: #00c490;
   text-decoration: none;
-  width: 100%;
   padding-left: 1em;
 }
 nav a:hover, nav a:focus {
@@ -50,6 +49,29 @@ nav a:hover, nav a:focus {
 }
 nav a:active {
   color: #003d2d;
+}
+nav a.logo {
+  -webkit-animation: fadein 2s;
+  /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 2s;
+  /* Firefox < 16 */
+  -ms-animation: fadein 2s;
+  /* Internet Explorer */
+  -o-animation: fadein 2s;
+  /* Opera < 12.1 */
+  animation: fadein 2s;
+  transition: all 0.4s ease;
+  font-size: 1em;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  padding-left: 0px;
+}
+nav a.logo:hover, nav a.logo:focus {
+  color: #63636E;
+}
+nav a.logo:active {
+  color: #121217;
 }
 
 h1 {
