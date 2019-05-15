@@ -44,13 +44,11 @@ nav {
 		@include link-state(std-active);
 	}
 	a.logo {
-		@include fadein;
 		transition: $transition-speed;
 		font-size: 1em;
 		font-weight: 700;
 		color: white;
 		text-decoration: none;
-		padding-left: 0px;
 		@include link-state(logo-hover);
 		@include link-state(logo-active);
 	}
