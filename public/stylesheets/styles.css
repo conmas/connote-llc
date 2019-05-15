@@ -28,8 +28,28 @@ body {
 @media (max-width: 600px) {
   body {
     padding: 2em;
-    font-size: 0.75em;
   }
+}
+
+nav {
+  display: block;
+  width: 100%;
+  text-align: right;
+  background-color: #17171d;
+}
+nav a {
+  transition: all 0.4s ease;
+  font-size: 1em;
+  color: #00c490;
+  text-decoration: none;
+  width: 100%;
+  padding-left: 1em;
+}
+nav a:hover, nav a:focus {
+  color: #00694d;
+}
+nav a:active {
+  color: #003d2d;
 }
 
 h1 {
@@ -70,7 +90,7 @@ section {
   padding: 3em 0em 3em 0em;
 }
 
-div.service-blocks {
+.service-blocks {
   display: flex;
   justify-content: center;
   align-items: stretch;
@@ -78,31 +98,33 @@ div.service-blocks {
   padding: 1em 0em 1em 0em;
 }
 @media (min-width: 1200px) {
-  div.service-blocks {
+  .service-blocks {
     flex-direction: row wrap;
   }
 }
 @media (max-width: 800px) {
-  div.service-blocks {
+  .service-blocks {
     flex-direction: column;
   }
 }
 
-div.service {
+.service {
   background-color: #121217;
   margin: 0em 1em 0em 0em;
   padding: 0em 1em 0em 1em;
-  font-size: 1em;
-  line-height: 1.2em;
 }
-div.service h3 {
+.service h3 {
   font-weight: 700;
+  font-size: 1.125em;
+  line-height: 1.5em;
 }
-div.service p {
+.service p {
   color: #63636E;
+  font-size: 1em;
+  line-height: 1.25em;
 }
 @media (max-width: 800px) {
-  div.service {
+  .service {
     margin: 0em 0em 1em 0em;
     padding: 0em 1em 0em 1em;
   }

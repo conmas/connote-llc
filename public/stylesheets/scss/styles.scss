@@ -21,12 +21,28 @@ body {
 		font-size: 1.25em; 
 	}
 	@include breakpoint(ipadpro) {
-		padding: 3em;
+		padding: 3em; 
 		font-size: 1em;
 	}
 	@include breakpoint(iphone) {
 		padding: 2em;
-		font-size: 0.75em;
+	}
+}
+
+nav {
+	display: block;
+	width: 100%;
+	text-align: right;
+	background-color: $background;
+	a {
+		transition: $transition-speed;
+		font-size: 1em;
+		color: $accentcolor;
+		text-decoration: none;
+		width: 100%;
+		padding-left: 1em;
+		@include link-state(hover);
+		@include link-state(active);
 	}
 }
 
@@ -78,13 +94,15 @@ section {
 	background-color: $darkgray;
 	margin: 0em 1em 0em 0em;
 	padding: 0em 1em 0em 1em;
-	font-size: 1em;
-	line-height: 1.2em;
 	h3 {
 		font-weight: 700;
+		font-size: 1.125em;
+		line-height: 1.5em;
 	}
 	p {
 		color: $lightgray;
+		font-size: 1em;
+		line-height: 1.25em;
 	}
 	@include breakpoint(ipad) {
 		margin: 0em 0em 1em 0em;

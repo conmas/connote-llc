@@ -54,6 +54,19 @@
   }
 }
 
+@mixin link-state($state) {
+  @if $state == active {
+    &:active {
+      color: $accentcolordark;
+    }
+  }
+  @else if $state == hover {
+    &:hover, &:focus {
+      color: $accentcolormedium;
+    }
+  }
+}
+
 @mixin button-state($state) {
   @if $state == disabled {
     &:disabled, &:disabled:hover, &:disabled:active {
