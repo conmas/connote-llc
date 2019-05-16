@@ -53,7 +53,7 @@ nav a:active {
 nav a.logo {
   transition: all 0.4s ease;
   font-size: 1em;
-  font-weight: 700;
+  font-weight: 500;
   color: white;
   text-decoration: none;
 }
@@ -62,6 +62,19 @@ nav a.logo:hover, nav a.logo:focus {
 }
 nav a.logo:active {
   color: #121217;
+}
+nav a.active {
+  transition: all 0.4s ease;
+  font-size: 1em;
+  font-weight: 700;
+  color: #00c490;
+  text-decoration: none;
+}
+nav a.active:hover, nav a.active:focus {
+  color: #00694d;
+}
+nav a.active:active {
+  color: #003d2d;
 }
 
 h1 {
@@ -86,6 +99,7 @@ h2 {
   font-weight: 500;
   font-size: 2em;
   line-height: 1.2em;
+  max-width: 90%;
 }
 @media (max-width: 999px) {
   h2 {

@@ -46,11 +46,20 @@ nav {
 	a.logo {
 		transition: $transition-speed;
 		font-size: 1em;
-		font-weight: 700;
+		font-weight: 500;
 		color: white;
 		text-decoration: none;
 		@include link-state(logo-hover);
 		@include link-state(logo-active);
+	}
+	a.active {
+		transition: $transition-speed;
+		font-size: 1em;
+		font-weight: 700;
+		color: $accentcolor;
+		text-decoration: none;
+		@include link-state(std-hover);
+		@include link-state(std-active);
 	}
 }
 
@@ -72,6 +81,7 @@ h2 {
 	font-weight: 500;
 	font-size: 2em;
 	line-height: 1.2em;
+	max-width: 90%;
 	@include breakpoint(ipadpro) {
 		font-size: 1.75em;
 		line-height: 1.2em;
