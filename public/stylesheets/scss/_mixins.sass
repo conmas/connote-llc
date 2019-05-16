@@ -1,0 +1,78 @@
+@mixin breakpoint($point)
+	@if $point == imac
+		@media (min-width: 1200px)
+			@content
+	@else if $point == macbook
+		@media (max-width: 1199px)
+			@content
+	@else if $point == ipadpro
+		@media (max-width: 999px)
+			@content
+	@else if $point == ipad
+		@media (max-width: 800px)
+			@content
+	@else if $point == iphone
+		@media (max-width: 600px)
+			@content
+
+@mixin field-location($location)
+	width: 47.5% !important
+	float: $location !important
+	padding-left: 0px
+	padding-right: 0px
+	@include breakpoint(iphone)
+		width: 100%
+		float: none
+
+@mixin field-state($state)
+	@if $state == focus
+		&:focus ~ label
+			color: $accentcolor
+			top: 0
+			transform: scale(0.6, 0.6)
+		&:focus ~ .underline
+			background-position: 0 0
+	@else if $state == valid
+		&:valid ~ label
+			color: $accentcolor
+			top: 0
+			transform: scale(0.6, 0.6)
+	@else if $state == invalid
+		&[type="email"]:not(:empty) ~ label
+			color: red
+			top: 0
+			transform: scale(0.6, 0.6)
+
+@mixin link-state($state)
+	@if $state == std-active
+		&:active
+			color: $accentcolordark
+	@else if $state == std-hover
+		&:hover, &:focus
+			color: $accentcolormedium
+	@else if $state == logo-active
+		&:active
+			color: $darkgray
+	@else if $state == logo-hover
+		&:hover, &:focus
+			color: $lightgray
+
+@mixin button-state($state)
+	@if $state == disabled
+		&:disabled, &:disabled:hover, &:disabled:active
+			background-color: transparent
+			border: 2px
+			border-color: $accentcolor
+	@else if $state == enabled
+		&:enabled
+			background-color: $accentcolor
+			border: none
+			color: black
+	@else if $state == hover
+		&:hover, &:focus
+			background-color: $accentcolormedium
+			color: white
+	@else if $state == active
+		&:active
+			background-color: $accentcolordark
+			color: white
