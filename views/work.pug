@@ -1,11 +1,7 @@
 extends layout
 
 block content
-	nav
-		a.logo(href='/') connote.
-		a.active(href='/work') work
-		a(href='/team') team
-		a(href='/contact') contact
+	+nav('work')
 	section
 		h1 work.
 		h2 We pride ourselves on the great work we&#8217;ve done with our partners. Reach out on our contact page if you&#8217;d like&nbsp;to&nbsp;see some examples of the projects we&#8217;ve tackled.

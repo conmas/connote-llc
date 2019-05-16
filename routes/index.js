@@ -67,7 +67,7 @@ router.post('/', [
 });
 
 router.get('/thanks', function(req, res, next) {
-	res.render('thanks');
+	res.render('includes/thanks');
 })
 
 

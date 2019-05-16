@@ -1,11 +1,7 @@
 extends layout
 
 block content
-	nav
-		a.logo(href='/') connote.
-		a(href='/work') work
-		a.active(href='/team') team
-		a(href='/contact') contact
+	+nav('team')
 	section
 		h1 team.
 		h2 Connote is made up of presentation experts who are passionate about getting your message out.
