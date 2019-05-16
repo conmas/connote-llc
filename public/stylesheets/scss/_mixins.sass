@@ -13,7 +13,7 @@
 			@content
 	@else if $point == iphone
 		@media (max-width: 600px)
-			@content
+			@content	
 
 @mixin field-location($location)
 	width: 47.5% !important
@@ -25,6 +25,7 @@
 		float: none
 
 @mixin field-state($state)
+	transition: $transition-speed
 	@if $state == focus
 		&:focus ~ label
 			color: $accentcolor
@@ -44,12 +45,13 @@
 			transform: scale(0.6, 0.6)
 
 @mixin link-state($state)
+	transition: $transition-speed
 	@if $state == std-active
 		&:active
-			color: $accentcolordark
+			color: darken($accentcolor, 30%)
 	@else if $state == std-hover
 		&:hover, &:focus
-			color: $accentcolormedium
+			color: darken($accentcolor, 15%)
 	@else if $state == logo-active
 		&:active
 			color: $darkgray
@@ -58,6 +60,7 @@
 			color: $lightgray
 
 @mixin button-state($state)
+	transition: $transition-speed
 	@if $state == disabled
 		&:disabled, &:disabled:hover, &:disabled:active
 			background-color: transparent
@@ -70,9 +73,9 @@
 			color: black
 	@else if $state == hover
 		&:hover, &:focus
-			background-color: $accentcolormedium
+			background-color: darken($accentcolor, 15%)
 			color: white
 	@else if $state == active
 		&:active
-			background-color: $accentcolordark
+			background-color: darken($accentcolor, 30%)
 			color: white

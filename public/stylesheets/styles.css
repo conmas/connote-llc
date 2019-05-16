@@ -38,63 +38,59 @@ nav {
   text-align: right;
 }
 nav a {
-  transition: all 0.4s ease;
-  font-size: 1em;
-  color: #00c490;
-  text-decoration: none;
   padding-left: 1em;
 }
-nav a:hover, nav a:focus {
-  color: #00694d;
-}
-nav a:active {
-  color: #003d2d;
-}
-nav a.logo {
-  transition: all 0.4s ease;
+
+a {
   font-size: 1em;
-  font-weight: 500;
-  color: white;
   text-decoration: none;
-}
-nav a.logo:hover, nav a.logo:focus {
-  color: #63636E;
-}
-nav a.logo:active {
-  color: #121217;
-}
-nav a.active {
-  transition: all 0.4s ease;
-  font-size: 1em;
-  font-weight: 700;
   color: #00c490;
-  text-decoration: none;
+  transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
-nav a.active:hover, nav a.active:focus {
-  color: #00694d;
+a:hover, a:focus {
+  color: #007858;
 }
-nav a.active:active {
-  color: #003d2d;
+a:active {
+  color: #002b20;
+}
+a ~ .active {
+  font-weight: 700;
 }
 
-h1 {
+a.logo {
+  font-weight: 500;
+  color: white;
+  transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+a.logo:hover, a.logo:focus {
+  color: #63636E;
+}
+a.logo:active {
+  color: #121217;
+}
+
+section {
+  padding: 3em 0em 3em 0em;
+}
+section h1 {
   font-weight: 700;
   font-size: 2.7em;
   line-height: 2em;
 }
 @media (max-width: 999px) {
-  h1 {
+  section h1 {
     font-size: 2em;
     line-height: 1em;
   }
 }
 @media (max-width: 600px) {
-  h1 {
+  section h1 {
     font-size: 1.75em;
   }
 }
-
-h2 {
+section h2 {
   color: #63636E;
   font-weight: 500;
   font-size: 2em;
@@ -102,67 +98,77 @@ h2 {
   max-width: 90%;
 }
 @media (max-width: 999px) {
-  h2 {
+  section h2 {
     font-size: 1.75em;
     line-height: 1.2em;
   }
 }
 @media (max-width: 800px) {
-  h2 {
+  section h2 {
     font-size: 1.5em;
     line-height: 1.2em;
   }
 }
-
-.section-header {
+section h2.section-header {
   color: white;
-}
-
-section {
-  padding: 3em 0em 3em 0em;
 }
 section p {
   color: #63636E;
 }
 
-.service-blocks {
+.box-container {
   display: flex;
   justify-content: center;
   align-items: stretch;
   align-content: center;
-  padding: 1em 0em 1em 0em;
+  margin: 2em 0em 0em 0em;
 }
 @media (min-width: 1200px) {
-  .service-blocks {
+  .box-container {
     flex-direction: row wrap;
   }
 }
 @media (max-width: 800px) {
-  .service-blocks {
+  .box-container {
     flex-direction: column;
   }
 }
 
-.service {
-  background-color: #121217;
+.box {
+  padding: 1em 1em 1em 1em;
   margin: 0em 1em 0em 0em;
-  padding: 0em 1em 0em 1em;
+  background-color: #121217;
 }
 @media (max-width: 800px) {
-  .service {
+  .box {
     margin: 0em 0em 1em 0em;
     padding: 0em 1em 0em 1em;
   }
 }
-.service h3 {
+.box h3 {
   font-weight: 700;
-  font-size: 1.125em;
-  line-height: 1.5em;
+  font-size: 1.25em;
+  line-height: 1.25em;
 }
-.service p {
+.box h3 span {
+  font-weight: 300;
+}
+.box p {
   color: #63636E;
   font-size: 1em;
   line-height: 1.25em;
+}
+.box a {
+  padding-right: 1em;
+}
+.box img {
+  width: 35%;
+  border-radius: 50%;
+}
+.box object {
+  stroke: #00c490;
+  border-radius: none;
+  width: 25%;
 }
 
 form fieldset.left {
@@ -213,6 +219,9 @@ form fieldset input.text {
   height: 2em;
   width: 100%;
   font-size: 1.65em;
+  transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
 form fieldset input.text:focus ~ label {
   color: #00c490;
@@ -239,6 +248,9 @@ form fieldset input.submit {
   height: 2em;
   border-radius: 0.5em;
   transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
 form fieldset input.submit:disabled, form fieldset input.submit:disabled:hover, form fieldset input.submit:disabled:active {
   background-color: transparent;
@@ -251,11 +263,11 @@ form fieldset input.submit:enabled {
   color: black;
 }
 form fieldset input.submit:hover, form fieldset input.submit:focus {
-  background-color: #00694d;
+  background-color: #007858;
   color: white;
 }
 form fieldset input.submit:active {
-  background-color: #003d2d;
+  background-color: #002b20;
   color: white;
 }
 form fieldset .underline {

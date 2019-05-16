@@ -29,89 +29,90 @@ nav
 	width: 100%
 	background-color: $background
 	text-align: right
-	a
-		transition: $transition-speed
-		font-size: 1em
-		color: $accentcolor
-		text-decoration: none
+	a  
 		padding-left: 1em
-		@include link-state(std-hover)
-		@include link-state(std-active)
-	a.logo
-		transition: $transition-speed
-		font-size: 1em
-		font-weight: 500
-		color: white
-		text-decoration: none
-		@include link-state(logo-hover)
-		@include link-state(logo-active)
-	a.active
-		transition: $transition-speed
-		font-size: 1em
+
+
+a
+	font-size: 1em
+	text-decoration: none
+	color: $accentcolor
+	@include link-state(std-hover)
+	@include link-state(std-active)
+	~ .active
 		font-weight: 700
-		color: $accentcolor
-		text-decoration: none
-		@include link-state(std-hover)
-		@include link-state(std-active)
 
-h1
-	font-weight: 700
-	font-size: 2.7em
-	line-height: 2em
-	@include breakpoint(ipadpro)
-		font-size: 2em
-		line-height: 1em
-	@include breakpoint(iphone)
-		font-size: 1.75em
-
-h2
-	color: $lightgray
+a.logo
 	font-weight: 500
-	font-size: 2em
-	line-height: 1.2em
-	max-width: 90%
-	@include breakpoint(ipadpro)
-		font-size: 1.75em
-		line-height: 1.2em
-	@include breakpoint(ipad)
-		font-size: 1.5em
-		line-height: 1.2em
-
-.section-header
-	color: white
+	color: $maintext
+	@include link-state(logo-hover)
+	@include link-state(logo-active)
 
 section
 	padding: 3em 0em 3em 0em
+	h1
+		font-weight: 700
+		font-size: 2.7em
+		line-height: 2em
+		@include breakpoint(ipadpro)
+			font-size: 2em
+			line-height: 1em
+		@include breakpoint(iphone)
+			font-size: 1.75em
+	h2
+		color: $lightgray
+		font-weight: 500
+		font-size: 2em
+		line-height: 1.2em
+		max-width: 90%
+		@include breakpoint(ipadpro)
+			font-size: 1.75em
+			line-height: 1.2em
+		@include breakpoint(ipad)
+			font-size: 1.5em
+			line-height: 1.2em
+	h2.section-header
+		color: white
 	p
 		color: $lightgray
 
-.service-blocks
+.box-container
 	display: flex
 	justify-content: center
 	align-items: stretch
 	align-content: center
-	padding: 1em 0em 1em 0em
+	margin: 2em 0em 0em 0em
 	@include breakpoint(imac)
 		flex-direction: row wrap
 	@include breakpoint(ipad)
 		flex-direction: column
 
-.service
-	background-color: $darkgray
+.box
+	padding: 1em 1em 1em 1em
 	margin: 0em 1em 0em 0em
-	padding: 0em 1em 0em 1em
+	background-color: $darkgray
 	@include breakpoint(ipad)
 		margin: 0em 0em 1em 0em
 		padding: 0em 1em 0em 1em
-
 	h3
 		font-weight: 700
-		font-size: 1.125em
-		line-height: 1.5em
+		font-size: 1.25em
+		line-height: 1.25em
+		span
+			font-weight: 300
 	p
 		color: $lightgray
 		font-size: 1em
 		line-height: 1.25em
+	a  
+		padding-right: 1em
+	img
+		width: 35%
+		border-radius: 50%
+	object
+		stroke: $accentcolor
+		border-radius: none
+		width: 25%
 
 form
 	fieldset.left
@@ -154,7 +155,6 @@ form
 			width: 100%
 			height: 2em
 			border-radius: .5em
-			transition: $transition-speed
 			@include button-state(disabled)
 			@include button-state(enabled)
 			@include button-state(hover)
@@ -167,4 +167,4 @@ form
 			background-color: $lightgray
 			background-size: 200% 100%
 			background-position: 100% 0
-			transition: $transition-speed
+			transition: $transition-speed 
