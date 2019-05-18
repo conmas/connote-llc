@@ -21,4 +21,8 @@ block content
 				p Recruiters spend less than 10 seconds on each résumé. Yours deserves to be memorable. Connote provides design and content consulting on résumés and curricula vitae for individuals and recent graduates looking to make a splash.
 	section
 		h2.section-header contact us.
-		include includes/form
+		a(name="form")
+		if !element
+			include includes/form
+		else
+			include includes/thanks

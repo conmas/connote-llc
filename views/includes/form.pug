@@ -1,4 +1,4 @@
-.box
+.box.thanks
 	form(action='/', method='POST', autocomplete='off')
 		fieldset.left
 			input.text(type='text', name='first', required)
@@ -16,5 +16,7 @@
 			input.text(name='message', required)
 			label(for='message') How can we help?
 			.underline
-		fieldset
+		//button(value='Submit') Submit
+		//fieldset
 			input.submit(type='button', value='Submit')
+		button.submit(value='Submit') Submit
