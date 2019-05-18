@@ -2,7 +2,7 @@
 
 $(document).ready(function(){
 	if($('.thanks').length) {
-		window.scroll(0,900);
+		window.scroll(0,2000);
 	} else {
 		console.log("Nothing to see here folks")
 	}
