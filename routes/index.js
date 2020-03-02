@@ -3,9 +3,12 @@ var express = require('express');
 var router = express.Router();
 const { check,validationResult } = require('express-validator/check');
 const { sanitizeBody } = require('express-validator/filter');
+const axios = require('axios');
+const querystring = require('querystring');
 const API_KEY = process.env.MAILGUN_KEY;
 const DOMAIN = process.env.MAILGUN_DOMAIN;
 const mailgun = require('mailgun-js')({apiKey: API_KEY, domain: DOMAIN});
+const secret = process.env.CAPTCHA_SECRET;
 
 const nodemailer = require('nodemailer');
 
@@ -48,7 +51,6 @@ router.post('/',
   // 		}
 
   		// if no validation errors, then create the email
-		console.log('Data received!');
 		let data = {
 			from: req.body.email,
 			to: process.env.MAILGUN_TO_ADDRESS,
@@ -56,22 +58,33 @@ router.post('/',
 			text: req.body.message
 		};
 
-		//send the email
-		mailgun.messages().send(data, (error, body) => {
-			if(error) {
-				console.log(error);
-				res.redirect('/');
+		let captchaResponse = req.body['g-recaptcha-response'];
+
+		axios({
+			method:'post',
+			url:'https://www.google.com/recaptcha/api/siteverify',
+			headers: { 'content-type': 'application/x-www-form-urlencoded' },
+			data: querystring.stringify({
+				secret: secret,
+				response: captchaResponse
+			})
+		}).then(function(response) {
+			if(response.data.success===true) {
+				//send the email
+				mailgun.messages().send(data, (error, body) => {
+					if(error) {
+						console.log(error);
+						res.redirect('/');
+					} else {
+						console.log('An email from ' + req.body.email + ' was sent to ' + process.env.MAILGUN_TO_ADDRESS);
+						res.render('index', {title: 'Connote', element: 'thanks'});
+					}
+				});
 			} else {
-				console.log('An email from ' + req.body.email + ' was sent to ' + process.env.MAILGUN_TO_ADDRESS);
-				res.render('index', {title: 'Connote', element: 'thanks'});
-			}
-		});
-
+				console.log('something went wrong with captcha');
+				res.redirect('/');
+			};
+		});		
 });
-
-// router.get('/thanks', function(req, res, next) {
-// 	res.render('includes/thanks');
-// })
-
 
 module.exports = router;
