@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Work+Sans");
+@import url("https://fonts.googleapis.com/css?family=Abril+Fatface|Work+Sans");
 body {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -10,19 +10,19 @@ body {
 @media (min-width: 1200px) {
   body {
     padding: 3em 5em 3em 5em;
-    font-size: 1.5em;
+    font-size: 1.25em;
   }
 }
 @media (max-width: 1199px) {
   body {
     padding: 2em 4em 2em 4em;
-    font-size: 1.25em;
+    font-size: 1em;
   }
 }
 @media (max-width: 999px) {
   body {
     padding: 3em;
-    font-size: 1em;
+    font-size: 0.75em;
   }
 }
 @media (max-width: 600px) {
@@ -59,6 +59,7 @@ a ~ .active {
 }
 
 a.logo {
+  font-family: "Abril Fatface", serif;
   font-weight: 500;
   color: white;
   transition: all 0.4s ease;
@@ -75,9 +76,12 @@ section {
   padding: 3em 0em 3em 0em;
 }
 section h1 {
-  font-weight: 700;
-  font-size: 2.7em;
+  font-family: "Abril Fatface", serif;
+  font-size: 3.5em;
   line-height: 2em;
+}
+section h1 span.dot {
+  color: #00c490;
 }
 @media (max-width: 999px) {
   section h1 {
@@ -110,6 +114,7 @@ section h2 {
   }
 }
 section h2.section-header {
+  font-family: "Abril Fatface", serif;
   color: white;
 }
 section p {

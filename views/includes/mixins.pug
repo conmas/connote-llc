@@ -5,22 +5,26 @@ mixin nav(activePage)
 			a(href='/team') team
 			a(href='/contact') contact
 		else if activePage == 'work'
-			a.logo(href='/') connote.
+			a.logo(href='/') connote
+				span.dot .
 			a.active(href='/work') work
 			a(href='/team') team
 			a(href='/contact') contact		
 		else if activePage == 'team'
-			a.logo(href='/') connote.
+			a.logo(href='/') connote
+				span.dot .
 			a(href='/work') work
 			a.active(href='/team') team
 			a(href='/contact') contact
 		else if activePage == 'contact'
-			a.logo(href='/') connote.
+			a.logo(href='/') connote
+				span.dot .
 			a(href='/work') work
 			a(href='/team') team
 			a.active(href='/contact') contact
 		else
-			a.logo(href='/') connote.
+			a.logo(href='/') connote
+				span.dot .
 			a(href='/work') work
 			a(href='/team') team
 			a(href='/contact') contact
