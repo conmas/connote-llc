@@ -1,8 +1,8 @@
 var dotenv = require('dotenv').config();
 var express = require('express');
 var router = express.Router();
-const { check,validationResult } = require('express-validator/check');
-const { sanitizeBody } = require('express-validator/filter');
+const { check,validationResult } = require('express-validator');
+const { sanitizeBody } = require('express-validator');
 const axios = require('axios');
 const querystring = require('querystring');
 const API_KEY = process.env.MAILGUN_KEY;
@@ -12,27 +12,12 @@ const secret = process.env.CAPTCHA_SECRET;
 
 const nodemailer = require('nodemailer');
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Connote' });
-});
+router.get('/', function(req, res, next) { res.render('index', { title: 'Connote' }); });
+router.get('/work', function(req, res, next) { res.render('work', { title: 'Work' }); });
+router.get('/team', function(req, res, next) { res.render('team', { title: 'Team' }); });
+router.get('/contact', function(req, res, next) { res.render('contact', { title: 'Contact' }); });
 
-/* GET work page. */
-router.get('/work', function(req, res, next) {
-    res.render('work', { title: 'Work' });
-});
-
-/* GET team page. */
-router.get('/team', function(req, res, next) {
-    res.render('team', { title: 'Team' });
-});
-
-/* GET contact page. */
-router.get('/contact', function(req, res, next) {
-    res.render('contact', { title: 'Contact' });
-});
-
-router.post('/', 
+router.post('/',
 	// [
 	// check('first', 'Please enter normal characters only.').isAscii().trim(),
 	// check('first', 'Please enter your first name.').isLength({min:1}).trim(),
@@ -41,7 +26,7 @@ router.post('/',
 	// check('email', 'Please enter an email address.').isLength({min:1}).trim(),
 	// check('email', 'Please enter a valid email address.').isEmail().trim(),
 	// check('message', 'Please enter a message.').isLength({min:1}).trim()
-	// ], 
+	// ],
 	function(req, res, next) {
 
 		// deal with errors from the form validation
@@ -84,7 +69,7 @@ router.post('/',
 				console.log('something went wrong with captcha');
 				res.redirect('/');
 			};
-		});		
+		});
 });
 
 module.exports = router;
