@@ -1,11 +1,7 @@
 @import "mixins"
 @import "colors"
+@import "fonts"
 
-@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Work+Sans')
-$title-font: 'Abril Fatface', serif
-$body-font: -apple-system, BlinkMacSystemFont, 'Work Sans', sans-serif
-
-$font-stack: -apple-system, BlinkMacSystemFont, sans-serif
 $transition-speed: all 0.4s ease
 
 body
@@ -34,7 +30,13 @@ nav
 	text-align: right
 	a
 		padding-left: 1em
-
+	a.logo
+		font-family: $title-font
+		font-weight: 500
+		letter-spacing: $letter-spacing
+		color: $maintext
+		@include link-state(logo-hover)
+		@include link-state(logo-active)
 
 a
 	font-size: 1em
@@ -45,19 +47,13 @@ a
 	~ .active
 		font-weight: 700
 
-a.logo
-	font-family: $title-font
-	font-weight: 500
-	color: $maintext
-	@include link-state(logo-hover)
-	@include link-state(logo-active)
-
 section
 	padding: 3em 0em 3em 0em
 	h1
 		font-family: $title-font
 		font-size: 3.5em
 		line-height: 2em
+		letter-spacing: $letter-spacing
 		span.dot
 			color: $accentcolor
 		@include breakpoint(ipadpro)
@@ -79,6 +75,7 @@ section
 			line-height: 1.2em
 	h2.section-header
 		font-family: $title-font
+		letter-spacing: $letter-spacing
 		color: white
 	p
 		color: $lightgray

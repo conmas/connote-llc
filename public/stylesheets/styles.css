@@ -40,6 +40,20 @@ nav {
 nav a {
   padding-left: 1em;
 }
+nav a.logo {
+  font-family: "Abril Fatface", serif;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  color: white;
+  transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+nav a.logo:hover, nav a.logo:focus {
+  color: #63636E;
+}
+nav a.logo:active {
+  color: #121217;
+}
 
 a {
   font-size: 1em;
@@ -58,20 +72,6 @@ a ~ .active {
   font-weight: 700;
 }
 
-a.logo {
-  font-family: "Abril Fatface", serif;
-  font-weight: 500;
-  color: white;
-  transition: all 0.4s ease;
-  transition: all 0.4s ease;
-}
-a.logo:hover, a.logo:focus {
-  color: #63636E;
-}
-a.logo:active {
-  color: #121217;
-}
-
 section {
   padding: 3em 0em 3em 0em;
 }
@@ -79,6 +79,7 @@ section h1 {
   font-family: "Abril Fatface", serif;
   font-size: 3.5em;
   line-height: 2em;
+  letter-spacing: -0.04em;
 }
 section h1 span.dot {
   color: #00c490;
@@ -115,6 +116,7 @@ section h2 {
 }
 section h2.section-header {
   font-family: "Abril Fatface", serif;
+  letter-spacing: -0.04em;
   color: white;
 }
 section p {
