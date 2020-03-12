@@ -13,7 +13,7 @@
 			@content
 	@else if $point == iphone
 		@media (max-width: 600px)
-			@content	
+			@content
 
 @mixin field-location($location)
 	width: 47.5% !important
@@ -24,58 +24,116 @@
 		width: 100%
 		float: none
 
-@mixin field-state($state)
+@mixin state-manager($element, $state)
 	transition: $transition-speed
-	@if $state == focus
-		&:focus ~ label
-			color: $accentcolor
-			top: 0
-			transform: scale(0.6, 0.6)
-		&:focus ~ .underline
-			background-position: 0 0
-	@else if $state == valid
-		&:valid ~ label
-			color: $accentcolor
-			top: 0
-			transform: scale(0.6, 0.6)
-	@else if $state == invalid
-		&[type="email"]:not(:empty) ~ label
-			color: red
-			top: 0
-			transform: scale(0.6, 0.6)
+	@if $element == field
+		@if $state == focus
+			&:focus ~ label
+				color: $accentcolor
+				top: 0
+				transform: scale(0.6, 0.6)
+			&:focus ~ .underline
+				background-position: 0 0
+		@else if $state == valid
+			&:valid ~ label
+				color: $accentcolor
+				top: 0
+				transform: scale(0.6, 0.6)
+		@else if $state == invalid
+			&[type="email"]:not(:empty) ~ label
+				color: red
+				top: 0
+				transform: scale(0.6, 0.6)
+	@else if $element == link
+		@if $state == active
+			&:active
+				color: darken($accentcolor, 30%)
+		@else if $state == hover
+			&:hover, &:focus
+				color: darken($accentcolor, 15%)
+	@else if $element == logo
+		@if $state == active
+			&:active
+				color: $darkgray
+		@else if $state == hover
+			&:hover, &:focus
+				color: $lightgray
+	@else if $element == button
+		@if $state == disabled
+			&:disabled, &:disabled:hover, &:disabled:active
+				background-color: transparent
+				border: 2px
+				border-color: $accentcolor
+		@else if $state == enabled
+			&:enabled
+				background-color: $accentcolor
+				border: none
+				color: black
+		@else if $state == hover
+			&:hover, &:focus
+				background-color: darken($accentcolor, 15%)
+				color: white
+		@else if $state == active
+			&:active
+				background-color: darken($accentcolor, 30%)
+				color: white
 
-@mixin link-state($state)
-	transition: $transition-speed
-	@if $state == std-active
-		&:active
-			color: darken($accentcolor, 30%)
-	@else if $state == std-hover
-		&:hover, &:focus
-			color: darken($accentcolor, 15%)
-	@else if $state == logo-active
-		&:active
-			color: $darkgray
-	@else if $state == logo-hover
-		&:hover, &:focus
-			color: $lightgray
-
-@mixin button-state($state)
-	transition: $transition-speed
-	@if $state == disabled
-		&:disabled, &:disabled:hover, &:disabled:active
-			background-color: transparent
-			border: 2px
-			border-color: $accentcolor
-	@else if $state == enabled
-		&:enabled
-			background-color: $accentcolor
-			border: none
-			color: black
-	@else if $state == hover
-		&:hover, &:focus
-			background-color: darken($accentcolor, 15%)
+@mixin type($style)
+	@if $style == main
+		font-family: -apple-system, BlinkMacSystemFont, 'Work Sans', sans-serif
+		color: $maintext
+		-ms-text-size-adjust: 100%
+		-webkit-text-size-adjust: 100%
+		line-height: 1.2em
+		@include breakpoint(imac)
+			font-size: 1.25em
+		@include breakpoint(macbook)
+			font-size: 1em
+		@include breakpoint(ipadpro)
+			font-size: .75em
+	@else if $style == title
+		font-family: 'Abril Fatface', serif
+		font-size: 3.5em
+		line-height: 2em
+		letter-spacing: -.04em
+		span.dot
+			color: $accentcolor
+		@include breakpoint(ipadpro)
+			font-size: 2em
+			line-height: 1em
+		@include breakpoint(iphone)
+			font-size: 1.75em
+	@else if $style == subtitle
+		font-family: -apple-system, BlinkMacSystemFont, 'Work Sans', sans-serif
+		color: $lightgray
+		font-weight: 500
+		font-size: 2em
+		line-height: 1.2em
+		max-width: 90%
+		@include breakpoint(ipadpro)
+			font-size: 1.75em
+			line-height: 1.2em
+		@include breakpoint(ipad)
+			font-size: 1.5em
+			line-height: 1.25em
+		&.section-header
+			font-family: 'Abril Fatface', serif
 			color: white
-	@else if $state == active
-		&:active
-			background-color: darken($accentcolor, 30%)
-			color: white
+			letter-spacing: -.04em
+	@else if $style == navlogo
+		font-family: 'Abril Fatface', serif
+		font-weight: 500
+		letter-spacing: -.04em
+		color: $maintext
+		@include state-manager(logo, hover)
+		@include state-manager(logo, active)
+	@else if $style == body
+		color: $lightgray
+		font-size: 1em
+		line-height: 1.25em
+	@else if $style == small-title
+		font-weight: 700
+		font-size: 1.25em
+		line-height: 1.25em
+		span
+			font-weight: 300

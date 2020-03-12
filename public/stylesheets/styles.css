@@ -1,28 +1,40 @@
 @import url("https://fonts.googleapis.com/css?family=Abril+Fatface|Work+Sans");
 body {
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
   background-color: #17171d;
   font-family: -apple-system, BlinkMacSystemFont, "Work Sans", sans-serif;
   color: white;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
   line-height: 1.2em;
 }
 @media (min-width: 1200px) {
   body {
-    padding: 3em 5em 3em 5em;
     font-size: 1.25em;
   }
 }
 @media (max-width: 1199px) {
   body {
-    padding: 2em 4em 2em 4em;
     font-size: 1em;
   }
 }
 @media (max-width: 999px) {
   body {
-    padding: 3em;
     font-size: 0.75em;
+  }
+}
+@media (min-width: 1200px) {
+  body {
+    padding: 3em 5em 3em 5em;
+  }
+}
+@media (max-width: 1199px) {
+  body {
+    padding: 2em 4em 2em 4em;
+  }
+}
+@media (max-width: 999px) {
+  body {
+    padding: 3em;
   }
 }
 @media (max-width: 600px) {
@@ -96,6 +108,7 @@ section h1 span.dot {
   }
 }
 section h2 {
+  font-family: -apple-system, BlinkMacSystemFont, "Work Sans", sans-serif;
   color: #63636E;
   font-weight: 500;
   font-size: 2em;
@@ -111,16 +124,18 @@ section h2 {
 @media (max-width: 800px) {
   section h2 {
     font-size: 1.5em;
-    line-height: 1.2em;
+    line-height: 1.25em;
   }
 }
 section h2.section-header {
   font-family: "Abril Fatface", serif;
-  letter-spacing: -0.04em;
   color: white;
+  letter-spacing: -0.04em;
 }
 section p {
   color: #63636E;
+  font-size: 1em;
+  line-height: 1.25em;
 }
 
 .box-container {
@@ -173,6 +188,13 @@ section p {
   width: 25%;
 }
 
+form fieldset {
+  position: relative;
+  padding-left: 0px;
+  padding-right: 0px;
+  border: none;
+  width: 100%;
+}
 form fieldset.left {
   width: 47.5% !important;
   float: left !important;
@@ -196,13 +218,6 @@ form fieldset.right {
     width: 100%;
     float: none;
   }
-}
-form fieldset {
-  position: relative;
-  padding-left: 0px;
-  padding-right: 0px;
-  border: none;
-  width: 100%;
 }
 form fieldset label {
   position: absolute;
@@ -242,35 +257,6 @@ form fieldset input.text[type=email]:not(:empty) ~ label {
   color: red;
   top: 0;
   transform: scale(0.6, 0.6);
-}
-form fieldset input.submit {
-  position: relative;
-  font-size: 1.5em;
-  width: 100%;
-  height: 2em;
-  border-radius: 0.5em;
-  transition: all 0.4s ease;
-  transition: all 0.4s ease;
-  transition: all 0.4s ease;
-  transition: all 0.4s ease;
-}
-form fieldset input.submit:disabled, form fieldset input.submit:disabled:hover, form fieldset input.submit:disabled:active {
-  background-color: transparent;
-  border: 2px;
-  border-color: #00c490;
-}
-form fieldset input.submit:enabled {
-  background-color: #00c490;
-  border: none;
-  color: black;
-}
-form fieldset input.submit:hover, form fieldset input.submit:focus {
-  background-color: #007858;
-  color: white;
-}
-form fieldset input.submit:active {
-  background-color: #002b20;
-  color: white;
 }
 form fieldset .underline {
   width: 100%;
