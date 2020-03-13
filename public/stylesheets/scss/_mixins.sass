@@ -26,6 +26,7 @@
 
 @mixin state-manager($element, $state)
 	transition: $transition-speed
+
 	@if $element == field
 		@if $state == focus
 			&:focus ~ label
@@ -44,6 +45,7 @@
 				color: red
 				top: 0
 				transform: scale(0.6, 0.6)
+
 	@else if $element == link
 		@if $state == active
 			&:active
@@ -51,6 +53,7 @@
 		@else if $state == hover
 			&:hover, &:focus
 				color: darken($accentcolor, 15%)
+
 	@else if $element == logo
 		@if $state == active
 			&:active
@@ -58,6 +61,7 @@
 		@else if $state == hover
 			&:hover, &:focus
 				color: $lightgray
+
 	@else if $element == button
 		@if $state == disabled
 			&:disabled, &:disabled:hover, &:disabled:active
@@ -78,9 +82,12 @@
 				background-color: darken($accentcolor, 30%)
 				color: white
 
+$primary-font: 'Abril Fatface', serif
+$secondary-font: -apple-system, BlinkMacSystemFont, 'Work Sans', sans-serif
+
 @mixin type($style)
-	@if $style == main
-		font-family: -apple-system, BlinkMacSystemFont, 'Work Sans', sans-serif
+	@if $style == body
+		font-family: $secondary-font
 		color: $maintext
 		-ms-text-size-adjust: 100%
 		-webkit-text-size-adjust: 100%
@@ -91,8 +98,9 @@
 			font-size: 1em
 		@include breakpoint(ipadpro)
 			font-size: .75em
-	@else if $style == title
-		font-family: 'Abril Fatface', serif
+
+	@else if $style == h1
+		font-family: $primary-font
 		font-size: 3.5em
 		line-height: 2em
 		letter-spacing: -.04em
@@ -103,8 +111,8 @@
 			line-height: 1em
 		@include breakpoint(iphone)
 			font-size: 1.75em
-	@else if $style == subtitle
-		font-family: -apple-system, BlinkMacSystemFont, 'Work Sans', sans-serif
+
+	@else if $style == h2
 		color: $lightgray
 		font-weight: 500
 		font-size: 2em
@@ -116,24 +124,29 @@
 		@include breakpoint(ipad)
 			font-size: 1.5em
 			line-height: 1.25em
-		&.section-header
-			font-family: 'Abril Fatface', serif
+
+	@else if $style == h3
+			font-family: $primary-font
+			font-size: 2em
 			color: white
 			letter-spacing: -.04em
+
+	@else if $style == h4
+			font-family: $secondary-font
+			font-size: 1.25em
+			line-height: 1.2em
+			color: white
+			padding-top: 1em
+
 	@else if $style == navlogo
-		font-family: 'Abril Fatface', serif
+		font-family: $primary-font
 		font-weight: 500
 		letter-spacing: -.04em
 		color: $maintext
 		@include state-manager(logo, hover)
 		@include state-manager(logo, active)
-	@else if $style == body
+
+	@else if $style == p
 		color: $lightgray
 		font-size: 1em
 		line-height: 1.25em
-	@else if $style == small-title
-		font-weight: 700
-		font-size: 1.25em
-		line-height: 1.25em
-		span
-			font-weight: 300

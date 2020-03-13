@@ -28,3 +28,11 @@ mixin nav(activePage)
 			a(href='/work') work
 			a(href='/team') team
 			a(href='/contact') contact
+
+mixin box(svg,line1,line2,description)
+	.box
+		img.icon(src=svg)
+		h4=line1
+			br
+			span=line2
+		p=description

@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Abril+Fatface|Work+Sans");
+.accentfilter {
+  filter: invert(70%) sepia(16%) saturate(5179%) hue-rotate(114deg) brightness(84%) contrast(104%);
+}
+
 body {
   background-color: #17171d;
   font-family: -apple-system, BlinkMacSystemFont, "Work Sans", sans-serif;
@@ -87,28 +91,29 @@ a ~ .active {
 section {
   padding: 3em 0em 3em 0em;
 }
-section h1 {
+
+h1 {
   font-family: "Abril Fatface", serif;
   font-size: 3.5em;
   line-height: 2em;
   letter-spacing: -0.04em;
 }
-section h1 span.dot {
+h1 span.dot {
   color: #00c490;
 }
 @media (max-width: 999px) {
-  section h1 {
+  h1 {
     font-size: 2em;
     line-height: 1em;
   }
 }
 @media (max-width: 600px) {
-  section h1 {
+  h1 {
     font-size: 1.75em;
   }
 }
-section h2 {
-  font-family: -apple-system, BlinkMacSystemFont, "Work Sans", sans-serif;
+
+h2 {
   color: #63636E;
   font-weight: 500;
   font-size: 2em;
@@ -116,23 +121,34 @@ section h2 {
   max-width: 90%;
 }
 @media (max-width: 999px) {
-  section h2 {
+  h2 {
     font-size: 1.75em;
     line-height: 1.2em;
   }
 }
 @media (max-width: 800px) {
-  section h2 {
+  h2 {
     font-size: 1.5em;
     line-height: 1.25em;
   }
 }
-section h2.section-header {
+
+h3 {
   font-family: "Abril Fatface", serif;
+  font-size: 2em;
   color: white;
   letter-spacing: -0.04em;
 }
-section p {
+
+h4 {
+  font-family: -apple-system, BlinkMacSystemFont, "Work Sans", sans-serif;
+  font-size: 1.25em;
+  line-height: 1.2em;
+  color: white;
+  padding-top: 1em;
+}
+
+p {
   color: #63636E;
   font-size: 1em;
   line-height: 1.25em;
@@ -162,30 +178,34 @@ section p {
     margin: 0em 0em 1em 0em;
   }
 }
-.box h3 {
-  font-weight: 700;
-  font-size: 1.25em;
-  line-height: 1.25em;
-}
-.box h3 span {
-  font-weight: 300;
-}
-.box p {
-  color: #63636E;
-  font-size: 1em;
-  line-height: 1.25em;
-}
 .box a {
   padding-right: 1em;
 }
-.box img {
+.box img.headshot {
   width: 35%;
   border-radius: 50%;
 }
-.box object {
-  stroke: #00c490;
-  border-radius: none;
-  width: 25%;
+.box img.icon {
+  position: absolute;
+  text-align: right;
+  width: 2em;
+  height: 2em;
+  background-size: 2em 2em;
+  padding-bottom: 10em;
+}
+@media (max-width: 800px) {
+  .box img.icon {
+    width: 1.8em;
+    height: 1.8em;
+    background-size: 1.8em 1.8em;
+  }
+}
+@media (max-width: 600px) {
+  .box img.icon {
+    width: 1.5em;
+    height: 1.5em;
+    background-size: 1.5em 1.5em;
+  }
 }
 
 form fieldset {

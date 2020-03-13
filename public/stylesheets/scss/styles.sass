@@ -7,7 +7,7 @@ $transition-speed: all 0.4s ease
 
 body
 	background-color: $background
-	@include type(main)
+	@include type(body)
 	@include breakpoint(imac)
 		padding: 3em 5em 3em 5em
 	@include breakpoint(macbook)
@@ -38,12 +38,21 @@ a
 
 section
 	padding: 3em 0em 3em 0em
-	h1
-		@include type(title)
-	h2
-		@include type(subtitle)
-	p
-		@include type(body)
+
+h1
+	@include type(h1)
+
+h2
+	@include type(h2)
+
+h3
+	@include type(h3)
+
+h4
+	@include type(h4)
+
+p
+	@include type(p)
 
 .box-container
 	display: flex
@@ -61,19 +70,26 @@ section
 	background-color: $darkgray
 	@include breakpoint(ipad)
 		margin: 0em 0em 1em 0em
-	h3
-		@include type(small-title)
-	p
-		@include type(body)
 	a
 		padding-right: 1em
-	img
+	img.headshot
 		width: 35%
 		border-radius: 50%
-	object
-		stroke: $accentcolor
-		border-radius: none
-		width: 25%
+	img.icon
+		position: absolute
+		text-align: right
+		width: 2em
+		height: 2em
+		background-size: 2em 2em
+		padding-bottom: 10em
+		+breakpoint(ipad)
+			width: 1.8em
+			height: 1.8em
+			background-size: 1.8em 1.8em
+		+breakpoint(iphone)
+			width: 1.5em
+			height: 1.5em
+			background-size: 1.5em 1.5em
 
 form
 

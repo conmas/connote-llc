@@ -8,22 +8,43 @@ block content
 		h2 Give a presentation that demands to be heard. Connote offers design, copywriting, and consulting for sales presentations, slide decks, and branded Keynote or PowerPoint themes.
 		h2 No matter the medium, no matter the message, we make sure you make your point.
 	section
-		h2.section-header our services.
+		h3 our services.
 		h2 Connote offers a range of services designed to help your presentation shine.
 		.box-container
-			.box
-				h3 Presentation &amp;<br>Slide Deck Design
-				p Your next big idea isn&#8217;t based on a template, so your presentation shouldn't be either. Connote designs and lays out slide decks for sales pitches, conferences, or even internal presentations so you can stand out from the crowd.
-			.box
-				h3 Presentation<br>Consulting
-				p Give a presentation that demands to be heard. Beyond just the layout of your slides, Connote offers copywriting and consulting on the content, argument, and overall flow of your big sales pitch to ensure you make your point.
-			.box
-				h3 Résumé &amp;<br>CV Design
-				p Recruiters spend less than 10 seconds on each résumé. Yours deserves to be memorable. Connote provides design and content consulting on résumés and curricula vitae for individuals and recent graduates looking to make a splash.
-	section
-		h2.section-header contact us.
-		a(name="form")
-		if !element
-			include includes/form
-		else
-			include includes/thanks
+			+box(
+				'./images/airplay.svg',
+				'Presentation \&',
+				'Slide Deck Design',
+				'Your next big idea isn\’t based on a template, so your presentation shouldn\’t be either. Connote designs and lays out slide decks for sales pitches, conferences, or even internal presentations so you can stand out from the crowd.'
+			)
+			+box(
+				'./images/mic.svg',
+				'Presentation',
+				'Consulting',
+				'Give a presentation that demands to be heard. Beyond just the layout of your slides, Connote offers copywriting and consulting on the content, argument, and overall flow of your big sales pitch to ensure you make your point.'
+			)
+			+box(
+				'./images/cast.svg',
+				'Deck Themes for',
+				'Keynote \& PowerPoint',
+				'Be better than Calibri. We design and assemble beautiful, easy-to-use custom slide presentation themes for Keynote and PowerPoint that encapsulate your brand and make it easy for anyone on your team to get things done.'
+			)
+		.box-container
+			+box(
+				'./images/edit-3.svg',
+				'RFP Response',
+				'Consulting',
+				'We love RFPs. They’re clients’ way of letting you know where the bar is. They’re an easy recipe to help you leapfrog your competition. Connote can help craft a killer RFP response, with an RFP win rate well over 70% in the last 5 years.'
+			)
+			+box(
+				'./images/monitor.svg',
+				'Website Copy \&',
+				'Content Strategy',
+				'Your prospects live online. Make a good first impression. Connote provides web copywriting, content strategy, and web marketing consulting to help you make your mark online. And sure, there’s a little SEO juice in the mix too, why not.'
+			)
+			+box(
+				'./images/file-text.svg',
+				'Résumé \&',
+				'CV Design',
+				'Recruiters spend less than 10 seconds on each résumé. Yours deserves to be memorable. Connote provides design and content consulting on résumés and curricula vitae for individuals and recent graduates looking to make a splash.'
+			)
