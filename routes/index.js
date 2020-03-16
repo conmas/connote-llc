@@ -28,10 +28,6 @@ router.get('/contact', function(req, res, next) {
   res.render('contact', { title: 'Contact' });
 });
 
-router.get('presentation-design'), function(req, res, next) {
-  res.render('presentation-design', { title: 'Connote Services - Presentation \& Slide Deck Design' });
-});
-
 router.post('/',
 	// [
 	// check('first', 'Please enter normal characters only.').isAscii().trim(),
