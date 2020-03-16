@@ -1,15 +1,27 @@
 @import url("https://fonts.googleapis.com/css?family=Abril+Fatface|Work+Sans");
-.accentfilter {
-  filter: invert(70%) sepia(16%) saturate(5179%) hue-rotate(114deg) brightness(84%) contrast(104%);
+@font-face {
+  font-family: "Sf pro rounded";
+  src: url("https://uploads-ssl.webflow.com/5df24125ba2fb0b9840e4a0a/5df38f283b458a79b60fe0aa_SF-Pro-Rounded-Semibold.otf") format("opentype");
+  font-weight: 500;
 }
-
+@font-face {
+  font-family: "Sf pro rounded";
+  src: url("https://uploads-ssl.webflow.com/5df24125ba2fb0b9840e4a0a/5df38f273b458a32290fe0a4_SF-Pro-Rounded-Bold.otf") format("opentype");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Sf pro rounded";
+  src: url("https://uploads-ssl.webflow.com/5df24125ba2fb0b9840e4a0a/5df38f27be804b535887b721_SF-Pro-Rounded-Medium.otf") format("opentype");
+  font-weight: 300;
+}
 body {
   background-color: #17171d;
-  font-family: -apple-system, BlinkMacSystemFont, "Work Sans", sans-serif;
+  font-family: "Sf pro rounded", -apple-system, BlinkMacSystemFont, "Work Sans", sans-serif;
   color: white;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   line-height: 1.2em;
+  font-weight: 300;
 }
 @media (min-width: 1200px) {
   body {
@@ -84,12 +96,34 @@ a:hover, a:focus {
 a:active {
   color: #002b20;
 }
-a ~ .active {
-  font-weight: 700;
-}
 
 section {
   padding: 3em 0em 3em 0em;
+}
+@media (min-width: 1200px) {
+  section.hero {
+    max-width: 75%;
+  }
+}
+@media (max-width: 1199px) {
+  section.hero {
+    max-width: 80%;
+  }
+}
+@media (max-width: 999px) {
+  section.hero {
+    max-width: 85%;
+  }
+}
+@media (max-width: 800px) {
+  section.hero {
+    max-width: 90%;
+  }
+}
+@media (max-width: 600px) {
+  section.hero {
+    max-width: 95%;
+  }
 }
 
 h1 {
@@ -115,7 +149,7 @@ h1 span.dot {
 
 h2 {
   color: #63636E;
-  font-weight: 500;
+  font-weight: 300;
   font-size: 2em;
   line-height: 1.2em;
   max-width: 90%;
@@ -141,7 +175,7 @@ h3 {
 }
 
 h4 {
-  font-family: -apple-system, BlinkMacSystemFont, "Work Sans", sans-serif;
+  font-weight: 700;
   font-size: 1.25em;
   line-height: 1.2em;
   color: white;
@@ -239,7 +273,7 @@ form fieldset.right {
     float: none;
   }
 }
-form fieldset label {
+form label {
   position: absolute;
   top: 0.85em;
   font-size: 1.65em;
@@ -247,7 +281,7 @@ form fieldset label {
   transform-origin: left;
   transition: all 0.4s ease;
 }
-form fieldset input.text {
+form input.text {
   background-color: transparent;
   color: white;
   border: none;
@@ -260,25 +294,25 @@ form fieldset input.text {
   transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
-form fieldset input.text:focus ~ label {
+form input.text:focus ~ label {
   color: #00c490;
   top: 0;
   transform: scale(0.6, 0.6);
 }
-form fieldset input.text:focus ~ .underline {
+form input.text:focus ~ .underline {
   background-position: 0 0;
 }
-form fieldset input.text:valid ~ label {
+form input.text:valid ~ label {
   color: #00c490;
   top: 0;
   transform: scale(0.6, 0.6);
 }
-form fieldset input.text[type=email]:not(:empty) ~ label {
+form input.text[type=email]:not(:empty) ~ label {
   color: red;
   top: 0;
   transform: scale(0.6, 0.6);
 }
-form fieldset .underline {
+form .underline {
   width: 100%;
   height: 2px;
   background: linear-gradient(to right, #00c490 50%, transparent 50%);

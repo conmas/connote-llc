@@ -1,0 +1,86 @@
+$primary-font: 'Abril Fatface', serif
+$secondary-font: "Sf pro rounded", -apple-system, BlinkMacSystemFont, 'Work Sans', sans-serif
+
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Work+Sans')
+
+@font-face
+  font-family: 'Sf pro rounded'
+  src: url('https://uploads-ssl.webflow.com/5df24125ba2fb0b9840e4a0a/5df38f283b458a79b60fe0aa_SF-Pro-Rounded-Semibold.otf') format('opentype')
+  font-weight: 500
+
+@font-face
+  font-family: 'Sf pro rounded'
+  src: url('https://uploads-ssl.webflow.com/5df24125ba2fb0b9840e4a0a/5df38f273b458a32290fe0a4_SF-Pro-Rounded-Bold.otf') format('opentype')
+  font-weight: 700
+
+@font-face
+  font-family: 'Sf pro rounded'
+  src: url('https://uploads-ssl.webflow.com/5df24125ba2fb0b9840e4a0a/5df38f27be804b535887b721_SF-Pro-Rounded-Medium.otf') format('opentype')
+  font-weight: 300
+
+@mixin type($style)
+  @if $style == body
+    font-family: $secondary-font
+    color: $maintext
+    -ms-text-size-adjust: 100%
+    -webkit-text-size-adjust: 100%
+    line-height: 1.2em
+    font-weight: 300
+    @include breakpoint(imac)
+      font-size: 1.25em
+    @include breakpoint(macbook)
+      font-size: 1em
+    @include breakpoint(ipadpro)
+      font-size: .75em
+
+  @else if $style == h1
+    font-family: $primary-font
+    font-size: 3.5em
+    line-height: 2em
+    letter-spacing: -.04em
+    span.dot
+      color: $accentcolor
+    @include breakpoint(ipadpro)
+      font-size: 2em
+      line-height: 1em
+    @include breakpoint(iphone)
+      font-size: 1.75em
+
+  @else if $style == h2
+    color: $lightgray
+    font-weight: 300
+    font-size: 2em
+    line-height: 1.2em
+    max-width: 90%
+    @include breakpoint(ipadpro)
+      font-size: 1.75em
+      line-height: 1.2em
+    @include breakpoint(ipad)
+      font-size: 1.5em
+      line-height: 1.25em
+
+  @else if $style == h3
+      font-family: $primary-font
+      font-size: 2em
+      color: white
+      letter-spacing: -.04em
+
+  @else if $style == h4
+      font-weight: 700
+      font-size: 1.25em
+      line-height: 1.2em
+      color: white
+      padding-top: 1em
+
+  @else if $style == navlogo
+    font-family: $primary-font
+    font-weight: 500
+    letter-spacing: -.04em
+    color: $maintext
+    @include state-manager(logo, hover)
+    @include state-manager(logo, active)
+
+  @else if $style == p
+    color: $lightgray
+    font-size: 1em
+    line-height: 1.25em

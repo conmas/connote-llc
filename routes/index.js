@@ -12,10 +12,25 @@ const secret = process.env.CAPTCHA_SECRET;
 
 const nodemailer = require('nodemailer');
 
-router.get('/', function(req, res, next) { res.render('index', { title: 'Connote' }); });
-router.get('/work', function(req, res, next) { res.render('work', { title: 'Work' }); });
-router.get('/team', function(req, res, next) { res.render('team', { title: 'Team' }); });
-router.get('/contact', function(req, res, next) { res.render('contact', { title: 'Contact' }); });
+router.get('/', function(req, res, next) {
+  res.render('index', { title: 'Connote' });
+});
+
+router.get('/work', function(req, res, next) {
+  res.render('work', { title: 'Work' });
+});
+
+router.get('/team', function(req, res, next) {
+  res.render('team', { title: 'Team' });
+});
+
+router.get('/contact', function(req, res, next) {
+  res.render('contact', { title: 'Contact' });
+});
+
+router.get('presentation-design'), function(req, res, next) {
+  res.render('presentation-design', { title: 'Connote Services - Presentation \& Slide Deck Design' });
+});
 
 router.post('/',
 	// [

@@ -1,150 +1,158 @@
 @import "mixins"
 @import "colors"
-
-@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Work+Sans')
+@import "fonts"
 
 $transition-speed: all 0.4s ease
 
 body
-	background-color: $background
-	@include type(body)
-	@include breakpoint(imac)
-		padding: 3em 5em 3em 5em
-	@include breakpoint(macbook)
-		padding: 2em 4em 2em 4em
-	@include breakpoint(ipadpro)
-		padding: 3em
-	@include breakpoint(iphone)
-		padding: 2em
+  background-color: $background
+  +type(body)
+  +breakpoint(imac)
+    padding: 3em 5em 3em 5em
+  +breakpoint(macbook)
+    padding: 2em 4em 2em 4em
+  +breakpoint(ipadpro)
+    padding: 3em
+  +breakpoint(iphone)
+    padding: 2em
 
 nav
-	display: block
-	width: 100%
-	background-color: $background
-	text-align: right
-	a
-		padding-left: 1em
-	a.logo
-		@include type(navlogo)
+  display: block
+  width: 100%
+  background-color: $background
+  text-align: right
+  a
+    padding-left: 1em
+  a.logo
+    +type(navlogo)
 
 a
-	font-size: 1em
-	text-decoration: none
-	color: $accentcolor
-	@include state-manager(link, hover)
-	@include state-manager(link, active)
-	~ .active
-		font-weight: 700
+  font-size: 1em
+  text-decoration: none
+  color: $accentcolor
+  +state-manager(link, hover)
+  +state-manager(link, active)
 
 section
-	padding: 3em 0em 3em 0em
+  padding: 3em 0em 3em 0em
+  &.hero
+    +breakpoint(imac)
+      max-width: 75%
+    +breakpoint(macbook)
+      max-width: 80%
+    +breakpoint(ipadpro)
+      max-width: 85%
+    +breakpoint(ipad)
+      max-width: 90%
+    +breakpoint(iphone)
+      max-width: 95%
 
 h1
-	@include type(h1)
+  +type(h1)
 
 h2
-	@include type(h2)
+  +type(h2)
 
 h3
-	@include type(h3)
+  +type(h3)
 
 h4
-	@include type(h4)
+  +type(h4)
 
 p
-	@include type(p)
+  +type(p)
 
 .box-container
-	display: flex
-	justify-content: center
-	align-items: stretch
-	align-content: center
-	margin: 2em 0em 0em 0em
-	flex-direction: row wrap
-	@include breakpoint(ipad)
-		flex-direction: column
+  display: flex
+  justify-content: center
+  align-items: stretch
+  align-content: center
+  margin: 2em 0em 0em 0em
+  flex-direction: row wrap
+  +breakpoint(ipad)
+    flex-direction: column
 
 .box
-	padding: 1em 1em 1em 1em
-	margin: 0em 1em 0em 0em
-	background-color: $darkgray
-	@include breakpoint(ipad)
-		margin: 0em 0em 1em 0em
-	a
-		padding-right: 1em
-	img.headshot
-		width: 35%
-		border-radius: 50%
-	img.icon
-		position: absolute
-		text-align: right
-		width: 2em
-		height: 2em
-		background-size: 2em 2em
-		padding-bottom: 10em
-		+breakpoint(ipad)
-			width: 1.8em
-			height: 1.8em
-			background-size: 1.8em 1.8em
-		+breakpoint(iphone)
-			width: 1.5em
-			height: 1.5em
-			background-size: 1.5em 1.5em
+  padding: 1em 1em 1em 1em
+  margin: 0em 1em 0em 0em
+  background-color: $darkgray
+  +breakpoint(ipad)
+    margin: 0em 0em 1em 0em
+  a
+    padding-right: 1em
+  img.headshot
+    width: 35%
+    border-radius: 50%
+  img.icon
+    position: absolute
+    text-align: right
+    width: 2em
+    height: 2em
+    background-size: 2em 2em
+    padding-bottom: 10em
+    +breakpoint(ipad)
+      width: 1.8em
+      height: 1.8em
+      background-size: 1.8em 1.8em
+    +breakpoint(iphone)
+      width: 1.5em
+      height: 1.5em
+      background-size: 1.5em 1.5em
 
 form
 
-	fieldset
-		position: relative
-		padding-left: 0px
-		padding-right: 0px
-		border: none
-		width: 100%
-		&.left
-			@include field-location(left)
-		&.right
-			@include field-location(right)
+  fieldset
+    position: relative
+    padding-left: 0px
+    padding-right: 0px
+    border: none
+    width: 100%
+    &.left
+      +field-location(left)
+    &.right
+      +field-location(right)
 
-		label
-			position: absolute
-			top: .85em
-			font-size: 1.65em
-			color: $lightgray
-			transform-origin: left
-			transition: $transition-speed
+  label
+    position: absolute
+    top: .85em
+    font-size: 1.65em
+    color: $lightgray
+    transform-origin: left
+    transition: $transition-speed
 
-		input.text
-			background-color: transparent
-			color: $maintext
-			border: none
-			border-radius: 0
-			outline: none
-			height: 2em
-			width: 100%
-			font-size: 1.65em
-			@include state-manager(field, focus)
-			@include state-manager(field, valid)
-			@include state-manager(field, invalid)
+  input.text
+    background-color: transparent
+    color: $maintext
+    border: none
+    border-radius: 0
+    outline: none
+    height: 2em
+    width: 100%
+    font-size: 1.65em
+    +state-manager(field, focus)
+    +state-manager(field, valid)
+    +state-manager(field, invalid)
 
-		.underline
-			width: 100%
-			height: 2px
-			background: linear-gradient(to right, $accentcolor 50%, transparent 50%)
-			background-color: $lightgray
-			background-size: 200% 100%
-			background-position: 100% 0
-			transition: $transition-speed
+  .underline
+    width: 100%
+    height: 2px
+    background: linear-gradient(to right, $accentcolor 50%, transparent 50%)
+    background-color: $lightgray
+    background-size: 200% 100%
+    background-position: 100% 0
+    transition: $transition-speed
 
-	button
-		position: relative
-		font-size: 1.5em
-		width: 100%
-		height: 2em
-		border-radius: .5em
-		@include state-manager(button, disabled)
-		@include state-manager(button, enabled)
-		@include state-manager(button, hover)
-		@include state-manager(button, active)
+  button
+    position: relative
+    font-size: 1.5em
+    width: 100%
+    height: 2em
+    border-radius: .5em
+    +state-manager(button, disabled)
+    +state-manager(button, enabled)
+    +state-manager(button, hover)
+    +state-manager(button, active)
 
 .footer
-	font-size: .75em
-	color: $lightgray
+  font-size: .75em
+  color: $lightgray
