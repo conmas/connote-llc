@@ -20,10 +20,6 @@ router.get('/work', function(req, res, next) {
   res.render('work', { title: 'Work' });
 });
 
-router.get('/team', function(req, res, next) {
-  res.render('team', { title: 'Team' });
-});
-
 router.get('/contact', function(req, res, next) {
   res.render('contact', { title: 'Contact' });
 });

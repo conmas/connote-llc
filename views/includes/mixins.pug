@@ -6,27 +6,18 @@ mixin nav(activePage)
 	nav
 		if activePage == 'index'
 			a(href='/work') work
-			a(href='/team') team
 			a(href='/contact') contact
 		else if activePage == 'work'
 			+navlogo
 			a.active(href='/work') work
-			a(href='/team') team
-			a(href='/contact') contact		
-		else if activePage == 'team'
-			+navlogo
-			a(href='/work') work
-			a.active(href='/team') team
 			a(href='/contact') contact
 		else if activePage == 'contact'
 			+navlogo
 			a(href='/work') work
-			a(href='/team') team
 			a.active(href='/contact') contact
 		else
 			+navlogo
 			a(href='/work') work
-			a(href='/team') team
 			a(href='/contact') contact
 
 mixin box(svg,line1,line2,description)
