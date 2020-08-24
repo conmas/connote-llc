@@ -1,14 +1,9 @@
-var dotenv = require('dotenv').config();
 var createError = require('http-errors');
 var express = require('express');
 var bodyParser = require('body-parser');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
-//const SMTPServer = require("smtp-server").SMTPServer;
-//const server = new SMTPServer({secure: false});
-//server.listen(587);
 
 var indexRouter = require('./routes/index');
 
