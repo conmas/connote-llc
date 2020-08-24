@@ -7,21 +7,14 @@
   },
   "dependencies": {
     "acorn": "^7.1.1",
-    "axios": "^0.19.2",
-    "body-parser": "^1.19.0",
     "connect-flash": "^0.1.1",
     "cookie-parser": "~1.4.5",
     "debug": "~4.1.1",
-    "dotenv": "^8.2.0",
     "express": "~4.17.1",
     "express-messages": "^1.0.1",
-    "express-validator": "^6.4.0",
     "http-errors": "~1.7.3",
-    "mailgun-js": "^0.22.0",
     "morgan": "~1.9.1",
-    "nodemailer": "^6.4.5",
     "pug": "^2.0.4",
-    "querystring": "^0.2.0",
     "sass": "^1.26.10",
     "smtp-server": "^3.6.0"
   }

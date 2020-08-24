@@ -104,60 +104,6 @@ p
       height: 1.5em
       background-size: 1.5em 1.5em
 
-form
-
-  fieldset
-    position: relative
-    padding-left: 0px
-    padding-right: 0px
-    border: none
-    width: 100%
-    &.left
-      +field-location(left)
-    &.right
-      +field-location(right)
-
-  label
-    position: absolute
-    top: .85em
-    font-size: 1.65em
-    color: $lightgray
-    transform-origin: left
-    transition: $transition-speed
-
-  input.text
-    background-color: transparent
-    color: $maintext
-    border: none
-    border-radius: 0
-    outline: none
-    height: 2em
-    width: 100%
-    font-size: 1.65em
-    +state-manager(field, focus)
-    +state-manager(field, valid)
-    +state-manager(field, invalid)
-
-  .underline
-    width: 100%
-    height: 2px
-    background: linear-gradient(to right, $accentcolor 50%, transparent 50%)
-    background-color: $lightgray
-    background-size: 200% 100%
-    background-position: 100% 0
-    transition: $transition-speed
-
-  button
-    position: relative
-    font-size: 1.5em
-    width: 100%
-    height: 2em
-    border-radius: .5em
-    +state-manager(button, disabled)
-    +state-manager(button, enabled)
-    +state-manager(button, hover)
-    +state-manager(button, active)
-
 .footer
   font-size: .75em
   color: $lightgray
