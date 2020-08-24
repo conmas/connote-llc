@@ -97,6 +97,18 @@ a:active {
   color: #002b20;
 }
 
+a.email {
+  color: #00c490;
+  transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+a.email:hover, a.email:focus {
+  color: #007858;
+}
+a.email:active {
+  color: #002b20;
+}
+
 section {
   padding: 3em 0em 3em 0em;
 }
